@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className='flex-[4]'>
       <FeaturedInfo />
-      <Chart data={userData} title="User Analytics" grid dataKey="Active User" />
+      <Chart data={userData} title="Doanh thu" grid dataKey="Active User" />
       {/* Home widgets */}
       <div className='flex m-5'>
         <WidgetSm />

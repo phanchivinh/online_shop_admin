@@ -4,7 +4,7 @@ import { AiOutlineSetting } from 'react-icons/ai'
 
 const Topbar = () => {
   return (
-    <div className='w-full h-12 bg-white sticky top-0 z-50'>
+    <div className='w-full h-12 bg-white sticky top-0 z-50 border border-b-blue-700'>
       {/* Topbar wrapper */}
       <div className='h-full py-0 px-5 flex items-center justify-between'>
         {/* Top Left */}

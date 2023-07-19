@@ -11,7 +11,7 @@ const NewProduct = () => {
         </div>
         <div className="addProductItem">
           <label className='text-gray-400 font-semibold mb-2'>Name</label>
-          <input className='p-2' type="text" placeholder="Apple Airpods" />
+          <input className='p-2' type="text" placeholder="T-shirt" />
         </div>
         <div className="addProductItem">
           <label className='text-gray-400 font-semibold mb-2'>Stock</label>

@@ -9,7 +9,7 @@ const Product = () => {
     <div className='flex-[4] p-5'>
       {/* Product Title Container */}
       <div className='flex items-center justify-between'>
-        <h1 className='text-3xl font-semibold'>Product</h1>
+        <h1 className='text-3xl font-semibold'>Sản phẩm</h1>
         {/* Add btn */}
         <Link to="/newProduct">
           <button className='w-20 p-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg cursor-pointer'>Create</button>
@@ -19,7 +19,7 @@ const Product = () => {
       <div className='flex'>
         {/* Top Left */}
         <div className='flex-1'>
-          <Chart data={productData} dataKey="Sales" title="Sales Performance" />
+          <Chart data={productData} dataKey="Sales" title="Hiệu suất bán hàng" />
         </div>
         {/* Top Right */}
         <div className='flex-1 p-5 m-5 shadow-lg shadow-blue-500'>
@@ -27,9 +27,9 @@ const Product = () => {
           <div>
             {/* Info Top */}
             <div className='flex items-center'>
-              <img className='w-10 h-10 rounded-full object-cover mr-5' alt="" src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
+              <img className='w-10 h-10 rounded-full object-cover mr-5' alt="" src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
               {/* Product Name */}
-              <span className='font-semibold'>T-shirt</span>
+              <span className='font-semibold'>Váy nữ ABC</span>
             </div>
             {/* Info Bottom */}
             <div className='mt-2'>
@@ -87,7 +87,7 @@ const Product = () => {
           <div className='flex flex-col justify-around'>
             {/* Product Upload */}
             <div className='flex items-center'>
-              <img className='w-24 h-24 rounded-lg object-cover mr-5' alt='' src='https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' />
+              <img className='w-24 h-24 rounded-lg object-cover mr-5' alt='' src='https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' />
               <label for="file"><MdPublish className='text-3xl' /></label>
               <input type='file' id='file' style={{ display: "none" }} />
             </div>

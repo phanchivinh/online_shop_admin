@@ -68,93 +68,93 @@ export const productData = [
 export const userRows = [
   {
     id: 1,
-    username: "Jon Snow",
+    username: "User Test 1",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 2,
-    username: "Jon Snow",
+    username: "User Test 2",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 3,
-    username: "Jon Snow",
+    username: "User Test 3",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 4,
-    username: "Jon Snow",
+    username: "User Test 4",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 5,
-    username: "Jon Snow",
+    username: "User Test 5",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 6,
-    username: "Jon Snow",
+    username: "User Test 6",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 7,
-    username: "Jon Snow",
+    username: "User Test 7",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 8,
-    username: "Jon Snow",
+    username: "User Test 8",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 9,
-    username: "Jon Snow",
+    username: "User Test 9",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
   {
     id: 10,
-    username: "Jon Snow",
+    username: "User Test 10",
     avatar:
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
+    email: "usertest@gmail.com",
     status: "active",
-    transaction: "$120.00",
+    transaction: "$500.000",
   },
 ];
 

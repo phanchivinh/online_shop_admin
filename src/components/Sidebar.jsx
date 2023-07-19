@@ -5,8 +5,7 @@ import { BiStore } from 'react-icons/bi'
 import { BsCurrencyDollar, BsBarChart } from 'react-icons/bs'
 import { AiOutlineMail, AiOutlineMessage } from 'react-icons/ai'
 import { VscFeedback } from 'react-icons/vsc'
-import { PiBagSimpleBold } from 'react-icons/pi'
-import { TiWarningOutline } from 'react-icons/ti'
+import { RiCoupon2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
@@ -24,30 +23,31 @@ const Sidebar = () => {
             <Link to="/">
               <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdLineStyle className='text-base mr-1' />Home</li>
             </Link>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTimeline className='text-base mr-1' />Analytics</li>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTrendingUp className='text-base mr-1' />Sales</li>
+            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTimeline className='text-base mr-1' />Phân tích</li>
+            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTrendingUp className='text-base mr-1' />Doanh số</li>
           </ul>
         </div>
         {/* Sidebar Menu */}
         <div className='mb-3'>
           {/* Sidebar title */}
-          <h3 className='font-bold text-xs text-gray-400'>Quick Menu</h3>
+          <h3 className='font-bold text-xs text-gray-400'>Quản lý</h3>
           {/* Sidebar List */}
           <ul className='p-1'>
             <Link to='/users'>
               <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><HiOutlineUser className='text-base mr-1' />Users</li>
             </Link>
             <Link to='/products'>
-              <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BiStore className='text-base mr-1' />Products</li>
+              <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BiStore className='text-base mr-1' />Quản lý sản phẩm</li>
             </Link>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsCurrencyDollar className='text-base mr-1' />Transactions</li>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsBarChart className='text-base mr-1' />Reports</li>
+            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsCurrencyDollar className='text-base mr-1' />Giao dịch</li>
+            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><RiCoupon2Line className='text-base mr-1' />Mã giảm giá</li>
+            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsBarChart className='text-base mr-1' />Báo cáo</li>
           </ul>
         </div>
         {/* Sidebar Menu */}
         <div className='mb-3'>
           {/* Sidebar title */}
-          <h3 className='font-bold text-xs text-gray-400'>Notifications</h3>
+          <h3 className='font-bold text-xs text-gray-400'>Thông báo</h3>
           {/* Sidebar List */}
           <ul className='p-1'>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><AiOutlineMail className='text-base mr-1' />Mail</li>
@@ -55,17 +55,15 @@ const Sidebar = () => {
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><AiOutlineMessage className='text-base mr-1' />Messages</li>
           </ul>
         </div>
-        {/* Sidebar Menu */}
-        <div className='mb-3'>
-          {/* Sidebar title */}
+        {/* Sidebar Menu staff */}
+        {/* <div className='mb-3'>
           <h3 className='font-bold text-xs text-gray-400'>Staff</h3>
-          {/* Sidebar List */}
           <ul className='p-1'>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><PiBagSimpleBold className='text-base mr-1' />Manage</li>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTimeline className='text-base mr-1' />Analytics</li>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><TiWarningOutline className='text-base mr-1' />Reports</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   )

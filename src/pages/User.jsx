@@ -25,9 +25,9 @@ const User = () => {
             {/* USer show top title */}
             <div className='flex flex-col ml-5'>
               {/* User show Username */}
-              <div className='font-semibold'>Anna Becker</div>
+              <div className='font-semibold'>User Test</div>
               {/* User show Title */}
-              <div className='font-light'>Software Engineer</div>
+              <div className='font-light'>Nhân viên văn phòng</div>
             </div>
           </div>
           {/* User show Bottom */}
@@ -38,14 +38,14 @@ const User = () => {
             <div className='flex items-center my-5 text-[#444]'>
               <MdPermIdentity className='text-lg' />
               {/* Show Info Title */}
-              <span className='ml-2'>annabeck99</span>
+              <span className='ml-2'>user99</span>
             </div>
 
             {/* -----User show Info----- */}
             <div className='flex items-center my-5 text-[#444]'>
               <AiOutlineCalendar className='text-lg' />
               {/* Show Info Title */}
-              <span className='ml-2'>14.03.1999</span>
+              <span className='ml-2'>01.02.1999</span>
             </div>
 
             <span className='text-sm font-semibold text-gray-400'>Contact Details</span>
@@ -60,7 +60,7 @@ const User = () => {
             <div className='flex items-center my-5 text-[#444]'>
               <AiOutlineMail className='text-lg' />
               {/* Show Info Title */}
-              <span className='ml-2'>annabeck99@gmail.com</span>
+              <span className='ml-2'>user99@gmail.com</span>
             </div>
 
             {/* -----User show Info----- */}
@@ -83,19 +83,19 @@ const User = () => {
                 {/* Update Item */}
                 <div className='flex flex-col mt-2  text-sm'>
                   <label className='mb-2'>Username</label>
-                  <input type='text' placeholder='annabeck99' className='w-60 h-8 border-b border-gray-400'></input>
+                  <input type='text' placeholder='user99' className='w-60 h-8 border-b border-gray-400'></input>
                 </div>
 
                 {/* Update Item */}
                 <div className='flex flex-col mt-2  text-sm'>
                   <label className='mb-2'>Full Name</label>
-                  <input type='text' placeholder='Anna Becker' className='w-60 h-8 border-b border-gray-400'></input>
+                  <input type='text' placeholder='User Test' className='w-60 h-8 border-b border-gray-400'></input>
                 </div>
 
                 {/* Update Item */}
                 <div className='flex flex-col mt-2  text-sm'>
                   <label className='mb-2'>Email</label>
-                  <input type='text' placeholder='annabeck99@gmail.com' className='w-60 h-8 border-b border-gray-400'></input>
+                  <input type='text' placeholder='user99@gmail.com' className='w-60 h-8 border-b border-gray-400'></input>
                 </div>
 
                 {/* Update Item */}
