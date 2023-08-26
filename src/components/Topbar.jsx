@@ -1,5 +1,5 @@
 import React from 'react'
-import { IoMdNotificationsOutline } from 'react-icons/io'
+// import { IoMdNotificationsOutline } from 'react-icons/io'
 import { AiOutlineSetting } from 'react-icons/ai'
 
 const Topbar = () => {
@@ -16,7 +16,7 @@ const Topbar = () => {
         <div className='flex items-center'>
           {/* Top bar icons container*/}
           <div className='relative cursor-pointer mr-3'>
-            <IoMdNotificationsOutline className='text-2xl' />
+            {/* <IoMdNotificationsOutline className='text-2xl' /> */}
             {/* Top icon badge */}
             <span className='absolute top-[-5px] right-[-5px] bg-red-600 text-xs text-white rounded-full w-4 h-4 flex items-center justify-center'>2</span>
           </div>
