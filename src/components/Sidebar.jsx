@@ -23,8 +23,6 @@ const Sidebar = () => {
             <Link to="/">
               <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdLineStyle className='text-base mr-1' />Home</li>
             </Link>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTimeline className='text-base mr-1' />Phân tích</li>
-            <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><MdTrendingUp className='text-base mr-1' />Doanh số</li>
           </ul>
         </div>
         {/* Sidebar Menu */}
@@ -45,16 +43,14 @@ const Sidebar = () => {
           </ul>
         </div>
         {/* Sidebar Menu */}
-        <div className='mb-3'>
-          {/* Sidebar title */}
+        {/* <div className='mb-3'>
           <h3 className='font-bold text-xs text-gray-400'>Thông báo</h3>
-          {/* Sidebar List */}
           <ul className='p-1'>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><AiOutlineMail className='text-base mr-1' />Mail</li>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><VscFeedback className='text-base mr-1' />Feedback</li>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><AiOutlineMessage className='text-base mr-1' />Messages</li>
           </ul>
-        </div>
+        </div> */}
         {/* Sidebar Menu staff */}
         {/* <div className='mb-3'>
           <h3 className='font-bold text-xs text-gray-400'>Staff</h3>
