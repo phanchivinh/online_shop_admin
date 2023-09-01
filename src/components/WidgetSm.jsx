@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { MdVisibility } from 'react-icons/md'
 
 const WidgetSm = () => {
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        //get users here
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }, [])
+
   return (
     <div className='flex-1 p-5 mr-5 shadow-lg shadow-blue-500'>
       {/* Widget Small Title */}

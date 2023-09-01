@@ -1,58 +1,123 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid'
-import { Link } from "react-router-dom";
-import { productRows } from '../dummyData'
+import { useNavigate } from "react-router-dom";
 import { AiOutlineDelete } from 'react-icons/ai'
+import { useDispatch, useSelector } from 'react-redux';
+import { allProducts } from '../mockData';
+import { publicRequest } from '../requestMethods';
+import MessagePopup from '../components/MessagePopup/MessagePopup';
 
 const ProductList = () => {
-  const [data, setData] = useState(productRows);
+  const [products, setProducts] = useState([]);
+  const [isDeleteSuccess, setIsDeleteSuccess] = useState(false);
+  const [deleteMessage, setDeleteMessage] = useState("");
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const accessToken = useSelector(state => state.auth.accessToken)
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id))
+  const handleDelete = async (id) => {
+    debugger
+    try {
+      const res = await publicRequest.post('/v1/management/products/delete', {
+        product_id: id
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      })
+      debugger
+      setIsDeleteSuccess(true)
+      setDeleteMessage("Xóa sản phẩm thành công")
+    } catch (error) {
+      console.log(error)
+    }
+    // setData(data.filter((item) => item.id !== id))
   }
 
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        // const response = await publicRequest.get('/v1/management/products/', {
+        //   headers: { Authorization: `Bearer ${accessToken}` }
+        // })
+        const response = allProducts
+        setProducts(response.data.products)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getProducts()
+  }, [])
+
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "product_id", headerName: "ID", width: 90 },
     {
-      field: "product",
-      headerName: "Product",
+      field: "product_name",
+      headerName: "Sản phẩm",
       width: 200,
       renderCell: (params) => {
         return (
           // Product list
           <div className="flex items-center">
             {/* Product list img */}
-            <img className="w-8 h-8 rounded-full object-cover mr-2" src={params.row.img} alt="" />
-            {params.row.name}
+            <img className="w-8 h-8 rounded-full object-cover mr-2" src={params.row.product_image} alt="" />
+            {params.row.product_name}
           </div>
         )
       },
     },
     {
-      field: "stock", headerName: "Stock", width: 200
+      field: "product_cost_price",
+      headerName: "Chi phí",
+      width: 100,
+      renderCell: (params) => {
+        return (
+          <div className="flex items-center">
+            {params.row.product_cost_price.toLocaleString('vi-VN', {
+              style: 'currency',
+              currency: 'VND',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+              useGrouping: true,
+            })}
+          </div>
+        )
+      }
     },
     {
-      field: "status",
+      field: "product_price",
+      headerName: "Giá bán",
+      width: 100,
+      renderCell: (params) => {
+        return (
+          <div className="flex items-center">
+            {params.row.product_price.toLocaleString('vi-VN', {
+              style: 'currency',
+              currency: 'VND',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+              useGrouping: true,
+            })}
+          </div>
+        )
+      }
+    },
+    {
+      field: "stock", headerName: "Tồn kho", width: 100
+    },
+    {
+      field: "Trạng thái",
       headerName: "Status",
-      width: 160
-    },
-    {
-      field: "price",
-      headerName: "Price",
-      width: 160
+      width: 150
     },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "Thao tác",
       width: 150,
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
-              {/* Product list edit */}
-              <button className='rounded-lg py-1 px-2 bg-green-500 text-white cursor-pointer mr-5'>Edit</button>
-            </Link>
-            <AiOutlineDelete onClick={handleDelete} className='text-red-600 cursor-pointer' />
+            {/* Product list edit */}
+            <button className='rounded-lg py-1 px-2 bg-green-500 text-white cursor-pointer mr-5' onClick={() => navigate("/product/" + params.row.product_id)}>Edit</button>
+            <AiOutlineDelete className='text-red-600 text-xl cursor-pointer' onClick={() => handleDelete(params.row.product_id)} />
           </>
         )
       }
@@ -60,13 +125,21 @@ const ProductList = () => {
   ]
   return (
     <div className='flex-[4]'>
+      <div className='mb-2 flex justify-end'>
+        <button className='bg-blue-500 text-white p-2 rounded-lg hover:opacity-70' onClick={() => navigate("/newProduct")}>Thêm sản phẩm mới</button>
+      </div>
       <DataGrid
-        rows={data}
-        disableSelectionOnClick
+        rows={products}
+        // disableSelectionOnClick
         columns={columns}
-        pageSize={8}
-        checkboxSelection
+        getRowId={(row) => row.product_id}
+        autoPageSize
+      // pageSize={10}
+      // checkboxSelection
       />
+      {
+        isDeleteSuccess && <MessagePopup message={deleteMessage} isSuccess={isDeleteSuccess} />
+      }
     </div>
   )
 }

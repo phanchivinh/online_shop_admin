@@ -9,6 +9,7 @@ import User from "./pages/User";
 import NewUser from "./pages/NewUser";
 import Product from "./pages/Product";
 import NewProduct from "./pages/NewProduct";
+import Login from "./pages/Login";
 
 const Layout = () => {
   return (
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         element: <NewProduct />
       },
     ],
+  },
+
+  {
+    path: '/login',
+    element: <Login />
   },
 ])
 
