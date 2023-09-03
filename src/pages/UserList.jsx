@@ -1,42 +1,63 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { DataGrid } from '@mui/x-data-grid';
 import { userRows } from "../dummyData";
 import { MdDeleteOutline } from 'react-icons/md'
+import { apiUsers } from '../mockData';
 
 const UserList = () => {
   const [data, setData] = useState(userRows);
+  const [users, setUsers] = useState([])
+  const navigate = useNavigate()
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
 
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        // const response = await publicRequest.get('/v1/management/products/', {
+        //   headers: { Authorization: `Bearer ${accessToken}` }
+        // })
+        const response = apiUsers
+        setUsers(response.data.users)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getUsers()
+  }, [])
+
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "user",
-      headerName: "User",
-      width: 200,
+      field: "last_name",
+      headerName: "Họ",
+      width: 150,
       renderCell: (params) => {
         return (
           <div className="flex items-center">
-            <img className="w-8 h-8 rounded-full object-cover mr-2" src={params.row.avatar} alt="" />
-            {params.row.username}
+            {params.row.last_name}
           </div>
         );
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
     {
-      field: "status",
-      headerName: "Status",
-      width: 120,
+      field: "first_name",
+      headerName: "Tên",
+      width: 100,
+      renderCell: (params) => {
+        return (
+          <div className="flex items-center">
+            {params.row.first_name}
+          </div>
+        );
+      },
     },
-    {
-      field: "transaction",
-      headerName: "Transaction Volume",
-      width: 160,
-    },
+    { field: "email", headerName: "Email", width: 150 },
+    { field: "phone_number", headerName: "Số điện thoại", width: 100 },
+    { field: "address", headerName: "Địa chỉ", width: 200 },
     {
       field: "action",
       headerName: "Action",
@@ -44,9 +65,7 @@ const UserList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
-              <button className="rounded-xl px-2 py-1 bg-[#3bb077] text-white cursor-pointer mr-5">Edit</button>
-            </Link>
+            <button onClick={() => navigate("/user/" + params.row.id)} className="rounded-xl px-2 py-1 bg-[#3bb077] text-white cursor-pointer mr-5">Edit</button>
             <MdDeleteOutline
               className="text-red-600 cursor-pointer text-2xl"
               onClick={() => handleDelete(params.row.id)}
@@ -60,10 +79,11 @@ const UserList = () => {
   return (
     <div className='flex-[4]'>
       <DataGrid
-        rows={data}
-        disableSelectionOnClick
+        rows={users}
+        // disableSelectionOnClick
         columns={columns}
-        pageSize={8}
+        getRowId={(row) => row.id}
+        autoPageSize
         checkboxSelection
       />
     </div>

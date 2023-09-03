@@ -1,3 +1,60 @@
+export const apiFeaturedInfo = {
+  "success": true,
+  "message": "Lấy thông tin doanh thu bán hàng thành công",
+  "data": {
+    "statistic": [
+      {
+        "sale_date": "2023-09-02",
+        "total_cost": 3120000.00,
+        "total_revenue": 14200000.00,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-09-03",
+        "total_cost": 1560000.00,
+        "total_revenue": 7100000.00,
+        "order_count": "1"
+      }
+    ]
+  }
+}
+
+export const apiHome = {
+  "success": true,
+  "message": "Lấy thông tin doanh thu bán hàng thành công",
+  "data": {
+    "statistic": [
+      {
+        "sale_date": "2023-09-03",
+        "total_cost": 1560000.00,
+        "total_revenue": 7100000.00,
+        "order_count": "1"
+      }
+    ]
+  }
+}
+
+export const apiSingleUser = {
+  "success": true,
+  "message": "Lấy thông tin tài khoản thành công",
+  "data": {
+    "user": {
+      "id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+      "first_name": "Triet",
+      "last_name": "Admin",
+      "email": "admin@gmail.com",
+      "phone_number": "0906566970",
+      "address": "",
+      "verify_flag": "Y",
+      "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+      "update_date_time": "2023-07-19 00:36:16.521792",
+      "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+      "create_date_time": "2023-07-19 00:36:16.521792",
+      "delete_flag": "N"
+    }
+  }
+}
+
 export const apiUsers = {
   "success": true,
   "message": "Lấy danh sách các tài khoản thành công",
