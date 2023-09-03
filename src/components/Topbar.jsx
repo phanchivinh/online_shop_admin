@@ -1,8 +1,19 @@
 import React from 'react'
 // import { IoMdNotificationsOutline } from 'react-icons/io'
 import { AiOutlineSetting } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import { logout } from '../redux/authRedux'
+import { useNavigate } from 'react-router-dom'
 
 const Topbar = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const onSignOut = (event) => {
+    dispatch(logout())
+    navigate("/login")
+  }
+
   return (
     <div className='w-full h-12 bg-white sticky top-0 z-50 border border-b-blue-700'>
       {/* Topbar wrapper */}
@@ -24,6 +35,7 @@ const Topbar = () => {
           <div className='relative cursor-pointer mr-3'>
             <AiOutlineSetting className='text-2xl' />
           </div>
+          <button className="bg-red-700 text-white p-1 rounded-lg" onClick={onSignOut}>Log out</button>
         </div>
       </div>
     </div>

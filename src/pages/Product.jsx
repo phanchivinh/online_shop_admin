@@ -13,19 +13,26 @@ const Product = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2]
   const accessToken = useSelector(state => state.auth.accessToken)
+  const isAdmin = useSelector(state => state.auth.isAdmin)
 
   //Form Input's States
   const [name, setName] = useState("")
   const [cost, setCost] = useState("")
   const [price, setPrice] = useState("")
   const [salePrice, setSalePrice] = useState("")
+  const [description, setDescription] = useState("")
+
+  const handleUpdate = (event) => {
+    event.preventDefault()
+  }
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        // const response = await publicRequest.get(`/v1/management/products/${id}`, {
-        //   headers: { Authorization: `Bearer ${accessToken}` }
+        // const response = await publicRequest.post(`/v1/management/products/${id}`, {
+        //   headers: { Authorization: `Bearer ${accessToken}` },
         // })
+        // debugger
         const response = fakeProduct
         const productDetail = JSON.parse(JSON.stringify(response.data.product))
         setProduct(response.data.product)
@@ -33,13 +40,13 @@ const Product = () => {
         setName(productDetail.product_name)
         setCost(productDetail.product_cost_price)
         setPrice(productDetail.product_price)
-        setSalePrice(productDetail.product_discount_price)
+        setDescription(productDetail.product_description)
       } catch (error) {
         console.log(error)
       }
     }
     getProduct()
-  }, [])
+  }, [accessToken, id])
 
   return (
     <div className='flex-[4] p-5'>
@@ -103,7 +110,7 @@ const Product = () => {
       </div>
       {/* Product Bottom */}
       <div className='p-5 m-5 shadow-lg shadow-blue-500'>
-        <form className='flex flex-col justify-between'>
+        <form className='flex flex-col justify-between' onSubmit={handleUpdate}>
           {/* Product Form Left */}
           <div className='w-full flex flex-col'>
             <label className='mb-2 text-gray-400'>Tên sản phẩm: </label>
@@ -114,6 +121,8 @@ const Product = () => {
             <input className='mb-2 p-1 border-b border-b-gray-500 w-40' type='text' value={price} placeholder='' onChange={(event) => setPrice(event.target.value)} />
             <label className='mb-2 text-gray-400'>Giá Sale: </label>
             <input className='mb-2 p-1 border-b border-b-gray-500 w-40' type='text' value={salePrice} placeholder='' onChange={(event) => setSalePrice(event.target.value)} />
+            <label className='mb-2 text-gray-400'>Chi tiết sản phẩm: </label>
+            <textarea className='mb-2 p-1 border-b border-b-gray-500 w-full min-h-[100px]' type='text' value={description} placeholder='' onChange={(event) => setDescription(event.target.value)} />
           </div>
           {/* Product Form Right */}
           <div className='flex flex-col justify-around'>
@@ -122,7 +131,7 @@ const Product = () => {
               <label htmlFor="file"><MdPublish className='text-3xl' /></label>
               <input type='file' id='file' style={{ display: "none" }} />
             </div> */}
-            <button className='p-2 mt-4 w-40 rounded-lg bg-blue-700 hover:bg-blue-600 text-white cursor-pointer font-semibold'>Update</button>
+            <button className='p-2 mt-4 w-40 rounded-lg bg-blue-700 hover:bg-blue-600 text-white cursor-pointer font-semibold' type='submit'>Update</button>
           </div>
         </form>
       </div>

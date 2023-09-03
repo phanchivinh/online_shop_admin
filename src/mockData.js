@@ -1,3 +1,194 @@
+export const apiUsers = {
+  "success": true,
+  "message": "Lấy danh sách các tài khoản thành công",
+  "data": {
+    "users": [
+      {
+        "id": "17eea0cf-ea8e-4f74-8f6f-8d1417b283e0",
+        "first_name": "Triet",
+        "last_name": "Admin 7",
+        "email": "admin7@gmail.com",
+        "phone_number": "0906566977",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "7248d72b-2439-4e5c-86c2-d5edfb8caf60",
+        "first_name": "Triet",
+        "last_name": "Admin 8",
+        "email": "admin8@gmail.com",
+        "phone_number": "0906566978",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "3ed7f2b3-388e-4001-9512-2715c6527480",
+        "first_name": "Triet",
+        "last_name": "Admin 9",
+        "email": "admin9@gmail.com",
+        "phone_number": "0906566979",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "182beede-82fb-43d3-948f-070e0c7d22db",
+        "first_name": "Triết",
+        "last_name": "Trần",
+        "email": "minhtest@gmail.com",
+        "phone_number": "0901231412",
+        "address": "159/54 Xóm Chiếu P16 Q4",
+        "verify_flag": "Y",
+        "update_user_id": "182beede-82fb-43d3-948f-070e0c7d22db",
+        "update_date_time": "2023-07-22 11:11:03.96571",
+        "create_user_id": "182beede-82fb-43d3-948f-070e0c7d22db",
+        "create_date_time": "2023-07-22 11:11:03.96571",
+        "delete_flag": "N"
+      },
+      {
+        "id": "f002351f-71b9-4267-b1cc-7445e260bfa3",
+        "first_name": "Phan Chis",
+        "last_name": "Vinh",
+        "email": "user1@gmail.com",
+        "phone_number": "0912345678",
+        "address": "263C Ba Dinh, Phường 08, Quận 8, Thành phố Hồ Chí Minh",
+        "verify_flag": "Y",
+        "update_user_id": "f002351f-71b9-4267-b1cc-7445e260bfa3",
+        "update_date_time": "2023-08-21 21:09:41.426687",
+        "create_user_id": "f002351f-71b9-4267-b1cc-7445e260bfa3",
+        "create_date_time": "2023-08-21 21:09:41.426687",
+        "delete_flag": "N"
+      },
+      {
+        "id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "first_name": "Triet",
+        "last_name": "Admin",
+        "email": "admin@gmail.com",
+        "phone_number": "0906566970",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "5213c8d2-450c-4d6d-80bb-ec0ae840f60e",
+        "first_name": "Triet",
+        "last_name": "Admin 1",
+        "email": "admin1@gmail.com",
+        "phone_number": "0906566971",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "c0edc69e-dab3-494a-bc86-0e49cd8f0c59",
+        "first_name": "Triet",
+        "last_name": "Admin 2",
+        "email": "admin2@gmail.com",
+        "phone_number": "0906566972",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "4f21557e-89a6-4f52-ba8d-11160b00837a",
+        "first_name": "Triet",
+        "last_name": "Admin 3",
+        "email": "admin3@gmail.com",
+        "phone_number": "0906566973",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "d5e19259-9d41-412f-9384-0a3b1158dcc7",
+        "first_name": "Triet",
+        "last_name": "Admin 4",
+        "email": "admin4@gmail.com",
+        "phone_number": "0906566974",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "f31b7c86-04f4-4b34-8f7e-7201d4a00ce8",
+        "first_name": "Triet",
+        "last_name": "Admin 5",
+        "email": "admin5@gmail.com",
+        "phone_number": "0906566975",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:16.521792",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "N"
+      },
+      {
+        "id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "first_name": "Sam",
+        "last_name": "Trần",
+        "email": "minhtriet.tr@gmail.com",
+        "phone_number": "1111011122",
+        "address": "159/54 Xóm Chiếu P16 Q4",
+        "verify_flag": "Y",
+        "update_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "update_date_time": "2023-08-28 19:36:39.627362",
+        "create_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "create_date_time": "2023-07-19 22:16:46.922488",
+        "delete_flag": "N"
+      },
+      {
+        "id": "b702dc21-734a-4f54-83f1-630cfd5b0fa9",
+        "first_name": "Sam",
+        "last_name": "Trần test update",
+        "email": "admin70@gmail.com",
+        "phone_number": "0906566976",
+        "address": "",
+        "verify_flag": "Y",
+        "update_user_id": "5213c8d2-450c-4d6d-80bb-ec0ae840f60e",
+        "update_date_time": "2023-09-01 22:28:35.83402",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:16.521792",
+        "delete_flag": "Y"
+      }
+    ]
+  }
+}
+
 export const fakeProduct = {
   "success": true,
   "message": "",
@@ -17,6 +208,905 @@ export const fakeProduct = {
       "create_date_time": "2023-08-16 10:39:24.524461",
       "delete_flag": "N"
     }
+  }
+}
+
+export const apiColors = {
+  "success": true,
+  "message": "",
+  "data": {
+    "categories": [
+      {
+        "color_id": 6,
+        "color_name": "Màu hồng",
+        "color_description": "Màu hồng",
+        "color_hex_code": "#FFB6C1",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 7,
+        "color_name": "Magenta",
+        "color_description": "Màu tím đỏ nhẹ",
+        "color_hex_code": "#FF00FF",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-20 22:11:07.251947",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-20 22:11:07.251947",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 8,
+        "color_name": "Hồng nhạt",
+        "color_description": "Hồng nhạt",
+        "color_hex_code": "#90EE90",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-20 22:58:38.522987",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-20 22:14:57.214664",
+        "delete_flag": "Y"
+      },
+      {
+        "color_id": 9,
+        "color_name": "Xám",
+        "color_description": "Màu xám",
+        "color_hex_code": "#808080",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 15:27:30.644487",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 15:27:30.644487",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 10,
+        "color_name": "Beige",
+        "color_description": "Beige",
+        "color_hex_code": "#F5F5DC",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 15:29:52.412587",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 15:29:52.412587",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 11,
+        "color_name": "Navy",
+        "color_description": "Màu Navy",
+        "color_hex_code": "#202A44",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 21:20:28.7117",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 21:20:28.7117",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 12,
+        "color_name": "Nâu",
+        "color_description": "Màu nâu",
+        "color_hex_code": "#A52A2A",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 23:28:29.523832",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 23:28:29.523832",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 13,
+        "color_name": "Bone white",
+        "color_description": "Màu bone white",
+        "color_hex_code": "#F9F6EE",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 10:14:22.054591",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 10:14:22.054591",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 16,
+        "color_name": "Khaki",
+        "color_description": "Màu Kaki",
+        "color_hex_code": "#F0E68C",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 11:04:07.493779",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 11:04:07.493779",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 17,
+        "color_name": "Mint",
+        "color_description": "Màu Mint",
+        "color_hex_code": "#3EB489",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 19:49:41.183886",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 19:49:41.183886",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 18,
+        "color_name": "Xanh rêu",
+        "color_description": "Màu xanh rêu",
+        "color_hex_code": "#003b08",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 21:01:07.584079",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 21:01:07.584079",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 19,
+        "color_name": "Xanh baby",
+        "color_description": "Màu xanh baby",
+        "color_hex_code": "#89CFF0",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 21:05:50.137401",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 21:05:50.137401",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 1,
+        "color_name": "Đỏ",
+        "color_description": "Màu đỏ",
+        "color_hex_code": "#FF0000",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 2,
+        "color_name": "Trắng",
+        "color_description": "Màu trắng",
+        "color_hex_code": "#FFFFFF",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 3,
+        "color_name": "Đen",
+        "color_description": "Màu đen",
+        "color_hex_code": "#000000",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 4,
+        "color_name": "Vàng",
+        "color_description": "Màu vàng",
+        "color_hex_code": "#FFFF00",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      },
+      {
+        "color_id": 5,
+        "color_name": "Xanh da trời",
+        "color_description": "Màu xanh da trời",
+        "color_hex_code": "#0000FF",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:37:03.169081",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:37:03.169081",
+        "delete_flag": "N"
+      }
+    ]
+  }
+}
+
+export const apiSizes = {
+  "success": true,
+  "message": "",
+  "data": {
+    "sizes": [
+      {
+        "size_id": "L_M_XS",
+        "size_name": "XS",
+        "size_description": "Size nam chữ XS",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_M",
+        "size_name": "M",
+        "size_description": "Size nam chữ M",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_L",
+        "size_name": "L",
+        "size_description": "Size nam chữ L",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_XL",
+        "size_name": "XL",
+        "size_description": "Size nam chữ XL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_XXL",
+        "size_name": "XXL",
+        "size_description": "Size nam chữ XXL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_XXXL",
+        "size_name": "XXXL",
+        "size_description": "Size nam chữ XXXL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_XS",
+        "size_name": "XS",
+        "size_description": "Size nữ chữ XS",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_M",
+        "size_name": "M",
+        "size_description": "Size nữ chữ M",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_L",
+        "size_name": "L",
+        "size_description": "Size nữ chữ L",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_XL",
+        "size_name": "XL",
+        "size_description": "Size nữ chữ XL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_XXL",
+        "size_name": "XXL",
+        "size_description": "Size nữ chữ XXL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_XXXL",
+        "size_name": "XXXL",
+        "size_description": "Size nữ chữ XXXL",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_35",
+        "size_name": "35",
+        "size_description": "Size nam số 35",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_36",
+        "size_name": "36",
+        "size_description": "Size nam số 36",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_37",
+        "size_name": "37",
+        "size_description": "Size nam số 37",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_38",
+        "size_name": "38",
+        "size_description": "Size nam số 38",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_39",
+        "size_name": "39",
+        "size_description": "Size nam số 39",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_40",
+        "size_name": "40",
+        "size_description": "Size nam số 40",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_41",
+        "size_name": "41",
+        "size_description": "Size nam số 41",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_42",
+        "size_name": "42",
+        "size_description": "Size nam số 42",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_43",
+        "size_name": "43",
+        "size_description": "Size nam số 43",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_35",
+        "size_name": "35",
+        "size_description": "Size nữ số 35",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_36",
+        "size_name": "36",
+        "size_description": "Size nữ số 36",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_37",
+        "size_name": "37",
+        "size_description": "Size nữ số 37",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_38",
+        "size_name": "38",
+        "size_description": "Size nữ số 38",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_39",
+        "size_name": "39",
+        "size_description": "Size nữ số 39",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_40",
+        "size_name": "40",
+        "size_description": "Size nữ số 40",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_41",
+        "size_name": "41",
+        "size_description": "Size nữ số 41",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_42",
+        "size_name": "42",
+        "size_description": "Size nữ số 42",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_43",
+        "size_name": "43",
+        "size_description": "Size nữ số 43",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_M_S",
+        "size_name": "S",
+        "size_description": "Size nam chữ S",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "L_F_S",
+        "size_name": "S",
+        "size_description": "Size nữ chữ S",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:53",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:53",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "0S",
+        "size_name": "0S",
+        "size_description": "Không có size",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 00:51:37",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 00:51:37",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_30",
+        "size_name": "30",
+        "size_description": "Size nữ 30",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 16:49:24",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 16:49:24",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_32",
+        "size_name": "32",
+        "size_description": "Size nữ 32",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 16:52:37",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 16:52:37",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_F_34",
+        "size_name": "34",
+        "size_description": "Size nữ 34",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 16:52:44",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 16:52:44",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_26",
+        "size_name": "26",
+        "size_description": "Size nam 26",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:44:35",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:44:35",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_28",
+        "size_name": "28",
+        "size_description": "Size nam 28",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:44:47",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:44:47",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_30",
+        "size_name": "30",
+        "size_description": "Size nam 30",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:44:58",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:44:58",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_31",
+        "size_name": "31",
+        "size_description": "Size nam 31",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:45:08",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:45:08",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_32",
+        "size_name": "32",
+        "size_description": "Size nam 32",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:45:14",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:45:14",
+        "delete_flag": "N"
+      },
+      {
+        "size_id": "N_M_34",
+        "size_name": "34",
+        "size_description": "Size nam 34",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 18:45:24",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 18:45:24",
+        "delete_flag": "N"
+      }
+    ],
+    "total_page": null
+  }
+}
+
+export const fakeCategories = {
+  "success": true,
+  "message": "",
+  "data": {
+    "categories": [
+      {
+        "category_id": 1,
+        "category_name": "TOPS",
+        "category_alias_name": "tops",
+        "category_description": "Các thời trang cho phần thân trên",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:39.188034",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:39.188034",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 2,
+        "category_name": "BOTTOMS",
+        "category_alias_name": "bottoms",
+        "category_description": "Các thời trang cho phần thân dưới",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:39.188034",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:39.188034",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 3,
+        "category_name": "ACCESSORIES",
+        "category_alias_name": "accessories",
+        "category_description": "Các phụ kiện thời trang",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-19 00:36:39.188034",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-19 00:36:39.188034",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 4,
+        "category_name": "POLOS",
+        "category_alias_name": "polos",
+        "category_description": "Áo POLO chất lượng cao",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 13:50:28.779352",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-20 20:17:47.556666",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 5,
+        "category_name": "HEADWEAR",
+        "category_alias_name": "headwear",
+        "category_description": "Thời trang nón",
+        "category_parent": 3,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:06:10.004441",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:06:10.004441",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 6,
+        "category_name": "MASKS",
+        "category_alias_name": "masks",
+        "category_description": "Khẩu trang",
+        "category_parent": 3,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:07:38.724977",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:07:38.724977",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 7,
+        "category_name": "PANTS",
+        "category_alias_name": "pants",
+        "category_description": "Các loại quần",
+        "category_parent": 2,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:08:33.293111",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:08:33.293111",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 8,
+        "category_name": "TEES",
+        "category_alias_name": "tees",
+        "category_description": "Áo phong kiểu TEE",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:09:29.173564",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:09:29.173564",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 9,
+        "category_name": "SHIRTS",
+        "category_alias_name": "shirts",
+        "category_description": "Các loại áo shirt",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:10:11.110313",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:10:11.110313",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 10,
+        "category_name": "SWEATSHIRT",
+        "category_alias_name": "sweatshirt",
+        "category_description": "Các loại áo len lạnh",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:10:45.827413",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:10:45.827413",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 11,
+        "category_name": "DENIM",
+        "category_alias_name": "denim",
+        "category_description": "Các loại áo chất liệu jean bạc màu",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:11:32.13286",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:11:32.13286",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 12,
+        "category_name": "HOODIES",
+        "category_alias_name": "hoodies",
+        "category_description": "Các loại áo lạnh hoodie",
+        "category_parent": 10,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:12:04.791028",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:12:04.791028",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 13,
+        "category_name": "FLANNEL",
+        "category_alias_name": "flannel",
+        "category_description": "Các loại sơ flannel",
+        "category_parent": 9,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:13:25.345348",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:13:25.345348",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 14,
+        "category_name": "ARTWORK TEES",
+        "category_alias_name": "artwork-tees",
+        "category_description": "Các loại áo tee nghệ thuật",
+        "category_parent": 8,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:14:08.989741",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:14:08.989741",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 15,
+        "category_name": "LONG SLEEVES",
+        "category_alias_name": "long-sleeves",
+        "category_description": "Các loại áo tee tay dài",
+        "category_parent": 8,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 14:14:28.346408",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 14:14:28.346408",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 16,
+        "category_name": "MEN",
+        "category_alias_name": "men",
+        "category_description": "Thời trang Nam",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 15:33:27.0124",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 15:33:27.0124",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 17,
+        "category_name": "WOMAN",
+        "category_alias_name": "woman",
+        "category_description": "Thời trang Nữ",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-07-21 15:33:42.762902",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-07-21 15:33:42.762902",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 21,
+        "category_name": "OUTERWEAR",
+        "category_alias_name": "outerwear",
+        "category_description": "Áo khoác",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-15 21:08:10.785413",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-15 21:08:10.785413",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 22,
+        "category_name": "TRACKSUIT",
+        "category_alias_name": "tracksuit",
+        "category_description": "TRACKSUIT",
+        "category_parent": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 11:10:04.046549",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 11:10:04.046549",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 23,
+        "category_name": "JACKET",
+        "category_alias_name": "jacket",
+        "category_description": "JACKET",
+        "category_parent": 22,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 11:10:45.565683",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 11:10:45.565683",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 24,
+        "category_name": "SPORTWEAR",
+        "category_alias_name": "sportwear",
+        "category_description": "Thời trang về thể thao",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 11:19:46.358263",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 11:19:46.358263",
+        "delete_flag": "N"
+      },
+      {
+        "category_id": 25,
+        "category_name": "BAGS",
+        "category_alias_name": "bags",
+        "category_description": "Các loại balo, túi",
+        "category_parent": null,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-16 16:34:52.469855",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-16 16:34:52.469855",
+        "delete_flag": "N"
+      }
+    ]
   }
 }
 
