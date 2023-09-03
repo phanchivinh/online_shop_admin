@@ -29,10 +29,10 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const response = await publicRequest.post(`/v1/management/products/${id}`, {
+        const response = await publicRequest.get(`/v1/management/products/${id}`, {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
-        // debugger
+        debugger
         // const response = fakeProduct
         const productDetail = JSON.parse(JSON.stringify(response.data.product))
         setProduct(response.data.product)
