@@ -32,10 +32,9 @@ const Product = () => {
         const response = await publicRequest.get(`/v1/management/products/${id}`, {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
-        debugger
         // const response = fakeProduct
-        const productDetail = JSON.parse(JSON.stringify(response.data.product))
-        setProduct(response.data.product)
+        const productDetail = JSON.parse(JSON.stringify(response.data.data.product))
+        setProduct(response.data.data.product)
         //Inputs
         setName(productDetail.product_name)
         setCost(productDetail.product_cost_price)

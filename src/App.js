@@ -10,6 +10,7 @@ import NewUser from "./pages/NewUser";
 import Product from "./pages/Product";
 import NewProduct from "./pages/NewProduct";
 import Login from "./pages/Login";
+import OrderList from "./pages/OrderList";
 
 const Layout = () => {
   return (
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: '/newProduct',
         element: <NewProduct />
+      },
+      {
+        path: '/orders',
+        element: <OrderList />
       },
     ],
   },

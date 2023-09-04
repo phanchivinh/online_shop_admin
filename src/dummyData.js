@@ -1,4 +1,56 @@
 import item1 from './item1-1.jpg'
+
+export const weeklyRevenue = {
+  "success": true,
+  "message": "Lấy thông tin doanh thu bán hàng thành công",
+  "data": {
+    "statistic": [
+      {
+        "sale_date": "2023-08-28",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-08-29",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-08-30",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-08-31",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-09-01",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-09-02",
+        "total_cost": 3120000,
+        "total_revenue": 14200000,
+        "order_count": "2"
+      },
+      {
+        "sale_date": "2023-09-03",
+        "total_cost": 1560000,
+        "total_revenue": 7100000,
+        "order_count": "1"
+      }
+    ]
+  }
+}
+
 export const userData = [
   {
     name: "Jan",

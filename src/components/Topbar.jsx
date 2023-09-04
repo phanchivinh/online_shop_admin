@@ -27,12 +27,6 @@ const Topbar = () => {
         <div className='flex items-center'>
           {/* Top bar icons container*/}
           <div className='relative cursor-pointer mr-3'>
-            {/* <IoMdNotificationsOutline className='text-2xl' /> */}
-            {/* Top icon badge */}
-            <span className='absolute top-[-5px] right-[-5px] bg-red-600 text-xs text-white rounded-full w-4 h-4 flex items-center justify-center'>2</span>
-          </div>
-          {/* Top bar icons container*/}
-          <div className='relative cursor-pointer mr-3'>
             <AiOutlineSetting className='text-2xl' />
           </div>
           <button className="bg-red-700 text-white p-1 rounded-lg" onClick={onSignOut}>Log out</button>

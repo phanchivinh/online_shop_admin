@@ -35,10 +35,10 @@ const ProductList = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        // const response = await publicRequest.get('/v1/management/products/', {
-        //   headers: { Authorization: `Bearer ${accessToken}` }
-        // })
-        const response = allProducts
+        const response = await publicRequest.get('/v1/management/products/', {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        }).then(res => res.data)
+        // const response = allProducts
         setProducts(response.data.products)
       } catch (error) {
         console.log(error)

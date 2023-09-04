@@ -7,8 +7,9 @@ import { apiUsers } from '../mockData';
 import { useSelector } from 'react-redux';
 import { publicRequest } from '../requestMethods';
 
-const UserList = () => {
-  const [users, setUsers] = useState([])
+
+const OrderList = () => {
+  const [orders, setOrders] = useState([])
   const navigate = useNavigate()
   const accessToken = useSelector(state => state.auth.accessToken)
 
@@ -17,49 +18,54 @@ const UserList = () => {
   };
 
   useEffect(() => {
-    const getUsers = async () => {
+    const getOrders = async () => {
       try {
-        const response = await publicRequest.get('/v1/management/users/', {
+        const response = await publicRequest.post('/v1/management/orders/', {
+          order_status: 0,  //get all
+          order_id: null    //get all
+        }, {
           headers: { Authorization: `Bearer ${accessToken}` }
         }).then(res => res.data)
         // const response = apiUsers
-        setUsers(response.data.users)
+        setOrders(response.data.orders)
       } catch (error) {
         console.log(error)
       }
     }
-    getUsers()
+    getOrders()
   }, [accessToken])
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "order_id", headerName: "ID", width: 50 },
     {
-      field: "last_name",
-      headerName: "Họ",
+      field: "user_name",
+      headerName: "Tên khách hàng",
       width: 150,
       renderCell: (params) => {
         return (
           <div className="flex items-center">
-            {params.row.last_name}
+            {params.row.user_name}
           </div>
         );
       },
+    },
+    { field: "user_email", headerName: "Email KH", width: 150 },
+    { field: "user_address", headerName: "Địa chỉ", width: 200 },
+    {
+      field: "order_total_price",
+      headerName: "Tổng giá trị đơn hàng",
+      width: 150
     },
     {
-      field: "first_name",
-      headerName: "Tên",
-      width: 100,
+      field: "order_status_name",
+      headerName: "Trạng thái đơn hàng",
+      width: 150,
       renderCell: (params) => {
-        return (
-          <div className="flex items-center">
-            {params.row.first_name}
-          </div>
-        );
-      },
+        <>
+          <Button type={params.row.order_status_name} />
+        </>
+      }
     },
-    { field: "email", headerName: "Email", width: 150 },
-    { field: "phone_number", headerName: "Số điện thoại", width: 100 },
-    { field: "address", headerName: "Địa chỉ", width: 200 },
     {
       field: "action",
       headerName: "Action",
@@ -78,13 +84,24 @@ const UserList = () => {
     },
   ];
 
+  const Button = ({ type }) => {
+    return <button className={`py-1 px-2 rounded-lg cursor-auto
+    ${type === 'Hoàn thành' && 'bg-[#e5faf2] text-[#3bb077]'}
+    ${type === 'Đã thanh toán' && 'bg-[#e5faf2] text-[#3bb077]'}
+    ${type === 'Đã hủy' && 'bg-[#fff0f1] text-[#d95087]'}
+    ${type === 'Đang giao' && 'bg-[#ebf1fe] text-[#2a7ade]'}
+    ${type === 'Chờ thanh toán' && 'bg-[#ebf1fe] text-[#2a7ade]'}
+    ${type === 'Vận chuyển' && 'bg-[#ebf1fe] text-[#2a7ade]'}
+    `}>{type}</button>
+  }
+
   return (
     <div className='flex-[4]'>
       <DataGrid
-        rows={users}
+        rows={orders}
         // disableSelectionOnClick
         columns={columns}
-        getRowId={(row) => row.id}
+        getRowId={(row) => row.order_id}
         autoPageSize
         checkboxSelection
       />
@@ -92,4 +109,4 @@ const UserList = () => {
   )
 }
 
-export default UserList
+export default OrderList

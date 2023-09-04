@@ -35,8 +35,8 @@ const User = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      // const response = await publicRequest.post()
-      const response = apiSingleUser
+      const response = await publicRequest.post()
+      // const response = apiSingleUser
       setUser(response.data.user)
     }
     getUser()
