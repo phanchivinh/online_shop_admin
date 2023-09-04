@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { DataGrid } from '@mui/x-data-grid';
-import { userRows } from "../dummyData";
 import { MdDeleteOutline } from 'react-icons/md'
-import { apiUsers } from '../mockData';
 import { useSelector } from 'react-redux';
 import { publicRequest } from '../requestMethods';
 
