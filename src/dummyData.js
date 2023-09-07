@@ -8,43 +8,43 @@ export const weeklyRevenue = {
       {
         "sale_date": "2023-08-28",
         "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_revenue": 1200000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-08-29",
         "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_revenue": 55500000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-08-30",
         "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_revenue": 14600000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-08-31",
-        "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_cost": 3250000,
+        "total_revenue": 21200000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-09-01",
         "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_revenue": 15320000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-09-02",
         "total_cost": 3120000,
-        "total_revenue": 14200000,
+        "total_revenue": 12780000,
         "order_count": "2"
       },
       {
         "sale_date": "2023-09-03",
         "total_cost": 1560000,
-        "total_revenue": 7100000,
+        "total_revenue": 74284000,
         "order_count": "1"
       }
     ]

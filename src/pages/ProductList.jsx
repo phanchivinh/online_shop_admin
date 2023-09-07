@@ -9,23 +9,20 @@ import MessagePopup from '../components/MessagePopup/MessagePopup';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const [isDeleteSuccess, setIsDeleteSuccess] = useState(false);
-  const [deleteMessage, setDeleteMessage] = useState("");
   const navigate = useNavigate()
-  const dispatch = useDispatch()
   const accessToken = useSelector(state => state.auth.accessToken)
 
   const handleDelete = async (id) => {
-    debugger
     try {
       const res = await publicRequest.post('/v1/management/products/delete', {
         product_id: id
       }, {
         headers: { Authorization: `Bearer ${accessToken}` }
-      })
-      debugger
-      setIsDeleteSuccess(true)
-      setDeleteMessage("Xóa sản phẩm thành công")
+      }).then(res => res.data)
+      if (res.success) {
+        navigate("/products")
+      }
+
     } catch (error) {
       console.log(error)
     }
@@ -137,9 +134,6 @@ const ProductList = () => {
       // pageSize={10}
       // checkboxSelection
       />
-      {
-        isDeleteSuccess && <MessagePopup message={deleteMessage} isSuccess={isDeleteSuccess} />
-      }
     </div>
   )
 }

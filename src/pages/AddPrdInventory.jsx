@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import { apiColors, apiPrdInventory, apiSizes, fakeProduct } from '../mockData'
 import { formatVND } from '../helpers'
 import { useParams } from 'react-router-dom'
+import ReactImageUploading from 'react-images-uploading'
+import { publicRequest } from '../requestMethods'
+import { useSelector } from 'react-redux'
 
 const AddPrdInventory = () => {
   const [product, setProduct] = useState(fakeProduct.data.product)
   const [inventInfos, setInventInfos] = useState(apiPrdInventory.data.product_inventories)
+  const [images, setImages] = useState([])
 
   const [selectedSize, setSelectedSize] = useState("")
   const [selectedColor, setSelectedColor] = useState(-1)
@@ -15,20 +19,44 @@ const AddPrdInventory = () => {
   const { id } = useParams()
   const sizes = apiSizes.data.sizes
   const colors = apiColors.data.categories
+  const accessToken = useSelector(state => state.auth.accessToken)
 
+  const handleImagesChange = (imageList, addUpdateIndex) => {
+    console.log(imageList, addUpdateIndex)
+    setImages(imageList)
+  }
 
-  // const handleCheckboxChange = (filterType, value) => {
-  //   setFilters(prevFilters => {
-  //     const newFilters = { ...prevFilters };
+  const getInventory = async () => {
+    try {
+      const response = await publicRequest.get(`/v1/management/products-inventory/${id}`, {}, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
+      if (response.success) {
+        setInventInfos(response.data.product_inventories)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
-  //     if (newFilters[filterType].includes(value)) {
-  //       newFilters[filterType] = newFilters[filterType].filter(item => item !== value)
-  //     } else {
-  //       newFilters[filterType].push(value)
-  //     }
-  //     return newFilters
-  //   })
-  // }
+  const handleAddImages = async () => {
+    try {
+      let formData = new FormData()
+
+      images.forEach((image, index) => {
+        formData.append(`image${index}`, image)
+      })
+      formData.append('image', images[0].file)
+      const response = await publicRequest.post('/v1/media/upload', {
+        image: images[0].file
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'multipart/form-data' }
+      }).then(res => res.data)
+      debugger
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleAddInventory = async () => {
     if (!selectedSize) {
@@ -42,6 +70,22 @@ const AddPrdInventory = () => {
     if (amount === 0) {
       setErrorMessage("Vui lòng nhập số lượng")
       return
+    }
+    try {
+      const response = await publicRequest.post('/v1/management/products-inventory/add', {
+        product_id: id,
+        size_id: selectedSize,
+        color_id: selectedColor,
+        stock_amount: amount,
+        delete_flag: "N"
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
+      if (response.success) {
+        await getInventory()
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -153,6 +197,36 @@ const AddPrdInventory = () => {
           <div className="addProductItem mt-2 flex justify-end">
             <button className='bg-blue-500 hover:opacity-70 p-1 text-white rounded-md' onClick={handleAddInventory}>Add Inventory</button>
           </div>
+        </div>
+      </div>
+      {/* --------------------------Images Inventory----------------------------- */}
+      <div className="flex flex-col mt-4 flex-1 p-5 shadow-lg shadow-blue-500 w-full">
+        <label className='font-bold mb-2'>Hình ảnh của sản phẩm</label>
+        <ReactImageUploading multiple maxNumber={20} value={images} onChange={handleImagesChange} acceptType={['jpg', 'gif', 'png']} dataURLKey="data_url" >
+          {
+            ({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
+              <div className=''>
+                <div className='flex mb-2'>
+                  <button className='bg-gray-600 text-white rounded-lg mr-2 p-2' style={isDragging ? { color: 'red' } : null}
+                    onClick={onImageUpload}
+                    {...dragProps}>Click ro Drag to add Images</button>
+                  <button className='bg-red-600 text-white rounded-lg p-2' onClick={onImageRemoveAll}>Remove all images</button>
+                </div>
+                {imageList.map((image, index) => (
+                  <div key={`product-${index}`} className='flex mb-2'>
+                    <img src={image.data_url} alt="" width="100" className='mr-2' />
+                    <div className='flex flex-col'>
+                      <button className='bg-green-500 text-white rounded-lg mb-2 w-20 p-2' onClick={() => onImageUpdate(index)}>Update</button>
+                      <button className='bg-red-500 text-white rounded-lg p-2' onClick={() => onImageRemove(index)}>Remove</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )
+          }
+        </ReactImageUploading>
+        <div className="addProductItem mt-2 flex justify-center">
+          <button className='bg-blue-500 hover:opacity-70 p-1 text-white rounded-md' onClick={handleAddImages}>Add Images</button>
         </div>
       </div>
     </div>

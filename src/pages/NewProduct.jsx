@@ -55,8 +55,9 @@ const NewProduct = () => {
       }, {
         headers: { Authorization: `Bearer ${accessToken}` }
       }).then(res => res.data)
+      const newProductID = response.data.product_id
       if (response.success) {
-        navigate("/")
+        navigate(`/addInventory/${newProductID}`)
       }
     } catch (error) {
       console.log(error)
@@ -85,6 +86,7 @@ const NewProduct = () => {
 
   return (
     <div className='flex-[4]'>
+      <button className='p-1 bg-lime-400 rounded-lg hover:opacity-70' onClick={() => navigate("/products")}>Quay lại</button>
       <h1 className='text-3xl font-semibold'>New Product</h1>
       <form className="mt-2" onSubmit={handleSubmit}>
         <div className="addProductItem mt-2">
@@ -176,7 +178,7 @@ const NewProduct = () => {
           } */}
         </div>
         <div className='flex justify-end'>
-          <button type='submit' className="my-6 mr-6 py-2 px-3 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-semibold cursor-pointer">Thêm sản phẩm</button>
+          <button type='submit' className="my-6 mr-6 py-2 px-3 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-semibold cursor-pointer">Sang bước kế tiếp</button>
         </div>
       </form>
     </div>

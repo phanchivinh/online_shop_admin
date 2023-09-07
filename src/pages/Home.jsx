@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div className='flex-[4]'>
       <FeaturedInfo />
-      <Chart data={weeklyData} title="Biểu đồ thông kê" grid dataKey="total_revenue" />
+      <Chart data={weeklyData} title="Biểu đồ tuần này" grid dataKey="total_revenue" />
       {/* Home widgets */}
       <div className='flex m-5'>
         <WidgetSm />

@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         element: <NewProduct />
       },
       {
-        path: '/newProduct/addInventory/:id',
+        path: '/addInventory/:id',
         element: <AddPrdInventory />
       },
       {

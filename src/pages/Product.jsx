@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Chart from '../components/Chart'
 import { productData } from '../dummyData'
 import { MdPublish } from 'react-icons/md'
@@ -17,6 +17,7 @@ const Product = () => {
   const accessToken = useSelector(state => state.auth.accessToken)
   const isAdmin = useSelector(state => state.auth.isAdmin)
 
+  const navigate = useNavigate()
   //Form Input's States
   const [name, setName] = useState("")
   const [cost, setCost] = useState("")
@@ -27,7 +28,6 @@ const Product = () => {
   const handleUpdate = (event) => {
     event.preventDefault()
   }
-  const handleImagesChange = () => { }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -53,6 +53,7 @@ const Product = () => {
   return (
     <div className='flex-[4] p-5'>
       {/* Product Title Container */}
+      <button className='p-1 bg-lime-400 rounded-lg hover:opacity-70' onClick={() => navigate("/products")}>Quay lại</button>
       <div className='flex items-center justify-between'>
         <h1 className='text-3xl font-semibold'>Sản phẩm</h1>
         {/* Add btn */}
@@ -63,9 +64,7 @@ const Product = () => {
       {/* Product Top */}
       <div className='flex'>
         {/* Top Left */}
-        <div className='flex-1'>
-          <Chart data={productData} dataKey="Sales" title="Hiệu suất bán hàng" />
-        </div>
+
         {/* Top Right */}
         <div className='flex-1 p-5 m-5 shadow-lg shadow-blue-500'>
           {/* Product Info */}
@@ -126,46 +125,8 @@ const Product = () => {
             <label className='mb-2 text-gray-400'>Chi tiết sản phẩm: </label>
             <textarea className='mb-2 p-1 border-b border-b-gray-500 w-full min-h-[100px]' type='text' value={description} placeholder='' onChange={(event) => setDescription(event.target.value)} />
           </div>
-          <div className="w-60 flex flex-col mt-4">
-            <label className='font-bold mb-2'>Hình ảnh của sản phẩm</label>
-            <ReactImageUploading multiple maxNumber={20} value={images} onChange={handleImagesChange} acceptType={['jpg', 'gif', 'png']} dataURLKey="data_url" >
-              {
-                ({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
-                  <div className=''>
-                    <div className='flex mb-2'>
-                      <button className='bg-gray-600 text-white rounded-lg mr-2' style={isDragging ? { color: 'red' } : null}
-                        onClick={onImageUpload}
-                        {...dragProps}>Click ro Drag to add Images</button>
-                      <button className='bg-red-600 text-white rounded-lg' onClick={onImageRemoveAll}>Remove all images</button>
-                    </div>
-                    {imageList.map((image, index) => (
-                      <div key={`product-${index}`} className='flex mb-2'>
-                        <img src={image.data_url} alt="" width="100" className='mr-2' />
-                        <div className='flex flex-col'>
-                          <button className='bg-green-500 text-white rounded-lg mb-2 w-20' onClick={() => onImageUpdate(index)}>Update</button>
-                          <button className='bg-red-500 text-white rounded-lg' onClick={() => onImageRemove(index)}>Remove</button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )
-              }
-            </ReactImageUploading>
-            {/* {
-            images.map((image, index) => (
-              <div key={`image-${index}`}>
-                <img src={image.dataURL} alt={`Image ${index}`} />
-              </div>
-            ))
-          } */}
-          </div>
           {/* Product Form Right */}
           <div className='flex flex-col justify-around'>
-            {/* <div className='flex items-center'>
-              <img className='w-24 h-24 rounded-lg object-cover mr-5' alt='' src='https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500' />
-              <label htmlFor="file"><MdPublish className='text-3xl' /></label>
-              <input type='file' id='file' style={{ display: "none" }} />
-            </div> */}
             <button className='p-2 mt-4 w-40 rounded-lg bg-blue-700 hover:bg-blue-600 text-white cursor-pointer font-semibold' type='submit'>Update</button>
           </div>
         </form>

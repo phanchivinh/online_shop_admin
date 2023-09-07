@@ -31,7 +31,7 @@ const OrderProducts = ({ products }) => {
               {/* Product info */}
               <div>
                 <label className='font-semibold mr-2'>Giá bán sản phẩm:</label>
-                <span>{item.product_price}</span>
+                <span>{formatVND(item.product_price)}</span>
               </div>
               {/* Product info */}
               <div>
@@ -49,7 +49,7 @@ const OrderProducts = ({ products }) => {
               : (<div>formatVND(item.product_discount_price)</div>)
             } */}
               <div className='text-red-500'>{item.product_discount_price > 0 ? formatVND(item.product_discount_price) : formatVND(item.product_price)}</div>
-              <div>x {item.product_order_quantity}</div>
+              <div >x {item.product_order_quantity}</div>
               <div className='border border-black w-16'></div>
               <div className='text-green-500'>{formatVND(item.product_total_price)}</div>
             </div>

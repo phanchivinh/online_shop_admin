@@ -38,7 +38,7 @@ const Sidebar = () => {
               <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BiStore className='text-base mr-1' />Quản lý sản phẩm</li>
             </Link>
             <Link to="/orders">
-              <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsCurrencyDollar className='text-base mr-1' />Giao dịch</li>
+              <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsCurrencyDollar className='text-base mr-1' />Quản lý hóa đơn</li>
             </Link>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><RiCoupon2Line className='text-base mr-1' />Mã giảm giá</li>
             <li className='flex items-center p-1 hover:bg-gray-200 rounded-lg active:bg-gray-200 cursor-pointer'><BsBarChart className='text-base mr-1' />Báo cáo</li>

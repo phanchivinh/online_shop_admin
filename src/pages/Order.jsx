@@ -33,16 +33,27 @@ const Order = () => {
   }
 
   useEffect(() => {
-    const getOrder = () => {
-      setOrderDetail(apiOrderDetail.data.order)
-      setOrderProducts(apiOrderDetail.data.order_products)
-      setSelectedStatus(orderDetail.order_status_code)
+    const getOrder = async () => {
+      try {
+        const response = await publicRequest.post(`/v1/management/orders/detail/${id}`, {
+          order_status: 0,
+          order_id: ""
+        }, {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        }).then(res => res.data)
+        setOrderDetail(response.data.order)
+        setOrderProducts(response.data.order_products)
+        setSelectedStatus(orderDetail.order_status_code)
+      } catch (error) {
+        console.log(error)
+      }
     }
     getOrder()
   }, [])
 
   return (
     <div className='flex-[4]'>
+      <button className='p-1 bg-lime-400 rounded-lg hover:opacity-70' onClick={() => navigate("/orders")}>Quay lại</button>
       <div className='flex-1 p-5 m-5 shadow-lg shadow-blue-500'>
         {/* Order Info */}
         <div>
