@@ -14,7 +14,7 @@ const emptyDate = {
 }
 
 const FeaturedInfo = () => {
-  const [todayStatistic, setTodayStatistic] = useState({})
+  const [todayStatistic, setTodayStatistic] = useState(emptyDate)
   const [revenueVariabilityPercent, setRevenueVariabilityPercent] = useState(0)
   const [profitVariabilityPercent, setProfitVariabilityPercent] = useState(0)
   const [orderVariabilityPercent, setOrderVariabilityPercent] = useState(0)
@@ -26,7 +26,7 @@ const FeaturedInfo = () => {
     const previousRevenue = previousData.total_revenue
     const todayRevenue = todayData.total_revenue
     const percentVariability = ((todayRevenue - previousRevenue) / previousRevenue) * 100
-    setRevenueVariabilityPercent(percentVariability)
+    setRevenueVariabilityPercent(percentVariability || 0)
     return;
   }
 
@@ -35,7 +35,7 @@ const FeaturedInfo = () => {
     const previousProfit = previousData.total_revenue - previousData.total_cost
     const todayProfit = todayData.total_revenue - todayData.total_cost
     const percentVariability = ((previousProfit - todayProfit) / previousProfit) * 100
-    setProfitVariabilityPercent(percentVariability)
+    setProfitVariabilityPercent(percentVariability || 0)
     return;
   }
 
@@ -43,7 +43,7 @@ const FeaturedInfo = () => {
     const previousTotal = previousData.total_count
     const todayTotal = todayData.total_count
     const percentVariability = ((previousTotal - todayTotal) / previousTotal) * 100
-    setOrderVariabilityPercent(percentVariability)
+    setOrderVariabilityPercent(percentVariability || 0)
   }
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const FeaturedInfo = () => {
         {/* Featured Money Container */}
         <div className='mx-2 my-0 flex items-center'>
           {/* Feature Money */}
-          <span className='text-3xl font-semibold'>{todayStatistic.total_count}</span>
+          <span className='text-3xl font-semibold'>{todayStatistic.order_count}</span>
           {/* Feature Money Rate */}
           <span className='flex items-center ml-5'>{orderVariabilityPercent}</span>
           {
@@ -126,7 +126,7 @@ const FeaturedInfo = () => {
           }
         </div>
         {/* Featured Subtitle */}
-        <span className='text-sm text-gray-400'>So với tháng trước</span>
+        <span className='text-sm text-gray-400'>So với hôm qua</span>
       </div>
 
     </div>

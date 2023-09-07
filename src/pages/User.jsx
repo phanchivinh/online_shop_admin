@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { MdPermIdentity, MdPhoneAndroid, MdLocationOn, MdPublish } from 'react-icons/md'
 import { AiOutlineCalendar, AiOutlineMail } from 'react-icons/ai'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { publicRequest } from '../requestMethods'
 import { apiSingleUser } from '../mockData'
 import { useSelector } from 'react-redux'
+import { eventWrapper } from '@testing-library/user-event/dist/utils'
 
 const User = () => {
-  const { id } = useParams()
+  const { userId } = useParams()
   const [user, setUser] = useState({})
   const accessToken = useSelector(state => state.auth.accessToken)
+  const navigate = useNavigate()
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [address, setAddress] = useState("")
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (event) => {
+    event.preventDefault()
     try {
-      const response = await publicRequest.post('/v1/management/users.update', {
+      const response = await publicRequest.post('/v1/management/users/update', {
         ...user,
         first_name: firstName,
         last_name: lastName,
@@ -26,8 +29,10 @@ const User = () => {
         address: address
       }, {
         headers: { Authorization: `Bearer ${accessToken}` }
-      })
-      debugger
+      }).then(res => res.data)
+      if (response.success) {
+        navigate(0)
+      }
     } catch (error) {
       console.log(error)
     }
@@ -35,16 +40,24 @@ const User = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      const response = await publicRequest.post()
+      const response = await publicRequest.get(`/v1/management/users/${userId}`, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
       // const response = apiSingleUser
+      const userInfo = JSON.parse(JSON.stringify(response.data.user))
       setUser(response.data.user)
+      setFirstName(userInfo.first_name)
+      setLastName(userInfo.last_name)
+      setPhoneNumber(userInfo.phone_number)
+      setAddress(userInfo.address)
     }
     getUser()
-  }, [])
+  }, [accessToken, userId])
 
   return (
     <div className='flex-[4]'>
       {/* User Title Container */}
+      <button className='p-1 bg-lime-400 rounded-lg hover:opacity-70' onClick={() => navigate("/users")}>Quay lại</button>
       <div className='flex items-center justify-between'>
         {/* User Title */}
         <h1 className='text-3xl font-semibold'>Edit User</h1>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { apiColors, apiSizes, fakeCategories } from '../mockData'
 import ReactImageUploading from 'react-images-uploading'
+import { publicRequest } from '../requestMethods'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const NewProduct = () => {
   const [name, setName] = useState("")
@@ -15,6 +18,8 @@ const NewProduct = () => {
     sizes: [],
   })
 
+  const navigate = useNavigate()
+  const accessToken = useSelector(state => state.auth.accessToken)
   const categories = fakeCategories.data.categories
   const sizes = apiSizes.data.sizes
   const colors = apiColors.data.categories
@@ -37,8 +42,26 @@ const NewProduct = () => {
     setImages(imageList)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    try {
+      const response = await publicRequest.post("/v1/management/products/add", {
+        product_name: name,
+        product_price: price,
+        product_cost_price: costPrice,
+        product_discount_price: 0,
+        product_description: description,
+        category_id: selectedCategory
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
+      if (response.success) {
+        navigate("/")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+
   }
   //   {
   //     "product_name": "ÁO THUN OVERSIZED *WATER OVP*",

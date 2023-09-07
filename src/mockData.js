@@ -246,6 +246,154 @@ export const apiUsers = {
   }
 }
 
+export const apiOrderStatuses = {
+  "success": true,
+  "message": "Lấy danh sách trạng thái của đơn hàng thành công",
+  "data": {
+    "order_statuses": [
+      {
+        "order_status_id": 1,
+        "order_status_name": "Chờ thanh toán",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:58:18",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:58:18",
+        "delete_flag": "N"
+      },
+      {
+        "order_status_id": 2,
+        "order_status_name": "Đã thanh toán",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:58:18",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:58:18",
+        "delete_flag": "N"
+      },
+      {
+        "order_status_id": 3,
+        "order_status_name": "Vận chuyển",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:58:48",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:58:48",
+        "delete_flag": "N"
+      },
+      {
+        "order_status_id": 4,
+        "order_status_name": "Đang giao",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:58:48",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:58:48",
+        "delete_flag": "N"
+      },
+      {
+        "order_status_id": 5,
+        "order_status_name": "Hoàn thành",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:59:36",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:59:36",
+        "delete_flag": "N"
+      },
+      {
+        "order_status_id": 6,
+        "order_status_name": "Đã hủy",
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-21 15:58:18",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-21 15:58:18",
+        "delete_flag": "N"
+      }
+    ]
+  }
+}
+
+export const apiOrderDetail = {
+  "success": true,
+  "message": "Lấy chi tiết đơn hàng id là 19 thành công",
+  "data": {
+    "order_products": [
+      {
+        "order_detail_id": 28,
+        "order_id": 19,
+        "product_id": "a97860f7-aae8-466d-b4ef-e8f37bec3ad0",
+        "product_name": "ÁO BÓNG CHÀY *ANGEL* LOGO",
+        "variant_product_id": "73159238-9b7c-4756-aa20-f39f824500de",
+        "product_image": "https://res.cloudinary.com/dnatymzuo/image/upload/v1692096603/shopping-web/ao-bong-chay-angel-0.jpg",
+        "product_size_name": "XS",
+        "product_color_name": "Màu đen",
+        "product_price": 700000,
+        "product_discount_price": 0,
+        "product_cost_price": 120000,
+        "product_order_quantity": 4,
+        "product_total_price": 2800000,
+        "update_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "update_date": "2023-08-25 15:31:27",
+        "create_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "create_date": "2023-08-25 15:31:27"
+      },
+      {
+        "order_detail_id": 29,
+        "order_id": 19,
+        "product_id": "a02acb5d-24e6-412d-b655-12d33c366ca9",
+        "product_name": "ÁO SƠ MI OXFORD *ANGEL*",
+        "variant_product_id": "0ce44fbe-979d-4980-aac1-abe55387de08",
+        "product_image": "https://res.cloudinary.com/dnatymzuo/image/upload/v1692091809/shopping-web/ao-so-mi-oxford-0.jpg",
+        "product_size_name": "S",
+        "product_color_name": "Màu xanh da trời",
+        "product_price": 500000,
+        "product_discount_price": 300000,
+        "product_cost_price": 80000,
+        "product_order_quantity": 11,
+        "product_total_price": 3300000,
+        "update_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "update_date": "2023-08-25 15:31:27",
+        "create_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "create_date": "2023-08-25 15:31:27"
+      },
+      {
+        "order_detail_id": 30,
+        "order_id": 19,
+        "product_id": "54100eed-7cc0-401a-a896-2a521e3c4c4b",
+        "product_name": "POLO DÀI TAY HỌA TIẾT KẼM",
+        "variant_product_id": "b7167030-f6e3-42b1-b4ca-c7c7d4ecd730",
+        "product_image": "https://res.cloudinary.com/dnatymzuo/image/upload/v1692098416/shopping-web/polo-dai-tay-hoa-tiet-kem-0.jpg",
+        "product_size_name": "M",
+        "product_color_name": "Màu đen",
+        "product_price": 500000,
+        "product_discount_price": 0,
+        "product_cost_price": 100000,
+        "product_order_quantity": 2,
+        "product_total_price": 1000000,
+        "update_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "update_date": "2023-08-25 15:31:27",
+        "create_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+        "create_date": "2023-08-25 15:31:27"
+      }
+    ],
+    "order": {
+      "order_id": 19,
+      "user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+      "user_name": "Triết Trần Minh Triết",
+      "user_email": "minhtriet.tr@gmail.com",
+      "user_address": "159/54 Xóm Chiếu P16 Q4",
+      "product_total_price": 7100000,
+      "shipping_price": 0,
+      "order_discount_price": 2200000,
+      "order_total_price": 7100000,
+      "order_status_code": 1,
+      "order_status_name": "Chờ thanh toán",
+      "payment_type_code": "cod",
+      "payment_type_name": "Thanh toán khi nhận hàng",
+      "update_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+      "update_date": "2023-08-25 15:31:27",
+      "create_user_id": "6e60f149-bd5c-4a6c-84c8-c8af2a424888",
+      "create_date": "2023-08-25 15:31:27"
+    }
+  }
+}
+
 export const fakeProduct = {
   "success": true,
   "message": "",
@@ -265,6 +413,39 @@ export const fakeProduct = {
       "create_date_time": "2023-08-16 10:39:24.524461",
       "delete_flag": "N"
     }
+  }
+}
+
+export const apiPrdInventory = {
+  "success": true,
+  "message": "",
+  "data": {
+    "product_inventories": [
+      {
+        "id": "73159238-9b7c-4756-aa20-f39f824500de",
+        "product_id": "a97860f7-aae8-466d-b4ef-e8f37bec3ad0",
+        "size_name": "XS",
+        "color_name": "Màu hồng",
+        "stock_amount": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-14 15:17:33.655835",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-14 15:17:33.655835",
+        "delete_flag": "N"
+      },
+      {
+        "id": "73159238-9b7c-4756-aa20-f39f824500de",
+        "product_id": "a97860f7-aae8-466d-b4ef-e8f37bec3ad0",
+        "size_name": "S",
+        "color_name": "Màu vàng",
+        "stock_amount": 1,
+        "update_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "update_date_time": "2023-08-14 15:17:33.655835",
+        "create_user_id": "1465c732-da4d-48f6-9b1c-b482130c1818",
+        "create_date_time": "2023-08-14 15:17:33.655835",
+        "delete_flag": "N"
+      }
+    ]
   }
 }
 

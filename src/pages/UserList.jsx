@@ -12,8 +12,20 @@ const UserList = () => {
   const navigate = useNavigate()
   const accessToken = useSelector(state => state.auth.accessToken)
 
-  const handleDelete = (id) => {
-    // setData(data.filter((item) => item.id !== id));
+  const handleDelete = async (id) => {
+    try {
+      const response = await publicRequest.post('/v1/management/users/delete', {
+        id: id
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
+      debugger
+      if (response.success) {
+        navigate(0)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   useEffect(() => {
@@ -86,7 +98,7 @@ const UserList = () => {
         columns={columns}
         getRowId={(row) => row.id}
         autoPageSize
-        checkboxSelection
+      // checkboxSelection
       />
     </div>
   )

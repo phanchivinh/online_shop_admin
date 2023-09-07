@@ -71,11 +71,11 @@ const OrderList = () => {
       renderCell: (params) => {
         return (
           <>
-            <button onClick={() => navigate("/user/" + params.row.id)} className="rounded-xl px-2 py-1 bg-[#3bb077] text-white cursor-pointer mr-5">Edit</button>
-            <MdDeleteOutline
+            <button onClick={() => navigate("/order/" + params.row.order_id)} className="rounded-xl px-2 py-1 bg-[#3bb077] text-white cursor-pointer mr-5">Edit</button>
+            {/* <MdDeleteOutline
               className="text-red-600 cursor-pointer text-2xl"
               onClick={() => handleDelete(params.row.id)}
-            />
+            /> */}
           </>
         );
       },
@@ -101,7 +101,7 @@ const OrderList = () => {
         columns={columns}
         getRowId={(row) => row.order_id}
         autoPageSize
-        checkboxSelection
+      // checkboxSelection
       />
     </div>
   )

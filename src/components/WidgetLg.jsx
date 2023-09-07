@@ -23,7 +23,6 @@ const WidgetLg = () => {
           // Compare the dates in descending order
           return date2 - date1;
         })
-        debugger
         setOrders(sortedOrders.slice(0, 5))
       } catch (error) {
         console.log(error)

@@ -7,9 +7,11 @@ import { publicRequest } from '../requestMethods'
 import { useSelector } from 'react-redux'
 import { fakeProduct } from '../mockData'
 import { formatVND } from '../helpers'
+import ReactImageUploading from 'react-images-uploading'
 
 const Product = () => {
   const [product, setProduct] = useState({})
+  const [images, setImages] = useState([])
   const location = useLocation();
   const id = location.pathname.split("/")[2]
   const accessToken = useSelector(state => state.auth.accessToken)
@@ -25,6 +27,7 @@ const Product = () => {
   const handleUpdate = (event) => {
     event.preventDefault()
   }
+  const handleImagesChange = () => { }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -122,6 +125,39 @@ const Product = () => {
             <input className='mb-2 p-1 border-b border-b-gray-500 w-40' type='text' value={salePrice} placeholder='' onChange={(event) => setSalePrice(event.target.value)} />
             <label className='mb-2 text-gray-400'>Chi tiết sản phẩm: </label>
             <textarea className='mb-2 p-1 border-b border-b-gray-500 w-full min-h-[100px]' type='text' value={description} placeholder='' onChange={(event) => setDescription(event.target.value)} />
+          </div>
+          <div className="w-60 flex flex-col mt-4">
+            <label className='font-bold mb-2'>Hình ảnh của sản phẩm</label>
+            <ReactImageUploading multiple maxNumber={20} value={images} onChange={handleImagesChange} acceptType={['jpg', 'gif', 'png']} dataURLKey="data_url" >
+              {
+                ({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
+                  <div className=''>
+                    <div className='flex mb-2'>
+                      <button className='bg-gray-600 text-white rounded-lg mr-2' style={isDragging ? { color: 'red' } : null}
+                        onClick={onImageUpload}
+                        {...dragProps}>Click ro Drag to add Images</button>
+                      <button className='bg-red-600 text-white rounded-lg' onClick={onImageRemoveAll}>Remove all images</button>
+                    </div>
+                    {imageList.map((image, index) => (
+                      <div key={`product-${index}`} className='flex mb-2'>
+                        <img src={image.data_url} alt="" width="100" className='mr-2' />
+                        <div className='flex flex-col'>
+                          <button className='bg-green-500 text-white rounded-lg mb-2 w-20' onClick={() => onImageUpdate(index)}>Update</button>
+                          <button className='bg-red-500 text-white rounded-lg' onClick={() => onImageRemove(index)}>Remove</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )
+              }
+            </ReactImageUploading>
+            {/* {
+            images.map((image, index) => (
+              <div key={`image-${index}`}>
+                <img src={image.dataURL} alt={`Image ${index}`} />
+              </div>
+            ))
+          } */}
           </div>
           {/* Product Form Right */}
           <div className='flex flex-col justify-around'>

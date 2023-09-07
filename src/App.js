@@ -11,6 +11,8 @@ import Product from "./pages/Product";
 import NewProduct from "./pages/NewProduct";
 import Login from "./pages/Login";
 import OrderList from "./pages/OrderList";
+import AddPrdInventory from "./pages/AddPrdInventory";
+import Order from "./pages/Order";
 
 const Layout = () => {
   return (
@@ -58,8 +60,16 @@ const router = createBrowserRouter([
         element: <NewProduct />
       },
       {
+        path: '/newProduct/addInventory/:id',
+        element: <AddPrdInventory />
+      },
+      {
         path: '/orders',
         element: <OrderList />
+      },
+      {
+        path: '/order/:id',
+        element: <Order />
       },
     ],
   },
