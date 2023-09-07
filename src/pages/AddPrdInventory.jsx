@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { apiColors, apiPrdInventory, apiSizes, fakeProduct } from '../mockData'
 import { formatVND } from '../helpers'
 import { useParams } from 'react-router-dom'
@@ -7,10 +7,11 @@ import { publicRequest } from '../requestMethods'
 import { useSelector } from 'react-redux'
 
 const AddPrdInventory = () => {
-  const [product, setProduct] = useState(fakeProduct.data.product)
-  const [inventInfos, setInventInfos] = useState(apiPrdInventory.data.product_inventories)
+  const [product, setProduct] = useState({})
+  const [inventInfos, setInventInfos] = useState([])
   const [images, setImages] = useState([])
 
+  const [cloundinaryUrls, setCloundinaryUrls] = useState([])
   const [selectedSize, setSelectedSize] = useState("")
   const [selectedColor, setSelectedColor] = useState(-1)
   const [amount, setAmount] = useState(0)
@@ -38,21 +39,49 @@ const AddPrdInventory = () => {
       console.log(error)
     }
   }
-
-  const handleAddImages = async () => {
+  const uploadImage = async (image) => {
     try {
-      let formData = new FormData()
-
-      images.forEach((image, index) => {
-        formData.append(`image${index}`, image)
-      })
-      formData.append('image', images[0].file)
       const response = await publicRequest.post('/v1/media/upload', {
-        image: images[0].file
+        image: image.file
       }, {
         headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'multipart/form-data' }
       }).then(res => res.data)
-      debugger
+      if (response.success) {
+        setCloundinaryUrls(prev => [...prev, response.data.product_image])
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const apiPostImage = async (imageUrl, mainFlag) => {
+    try {
+      const response = await publicRequest.post('/v1/management/product-images/add', {
+        product_id: id,
+        image_url: imageUrl,
+        image_main_flag: mainFlag
+      }, {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      }).then(res => res.data)
+      if (response.success) {
+        console.log(response.message)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleAddImages = async () => {
+    try {
+      images.forEach(async (image, index) => {
+        await uploadImage(image)
+      })
+      const mainUrl = cloundinaryUrls[0]
+      await apiPostImage(mainUrl, "Y")
+      setCloundinaryUrls(prev => prev.slice(1))
+      cloundinaryUrls.forEach(async (url, index) => {
+        await apiPostImage(url, "")
+      })
     } catch (error) {
       console.log(error)
     }
@@ -89,8 +118,27 @@ const AddPrdInventory = () => {
     }
   }
 
+  useEffect(() => {
+    const getProductDetail = async () => {
+      try {
+        const response = await publicRequest.get(`/v1/management/products/${id}`, {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        }).then(res => res.data)
+        if (response.success) {
+          setProduct(response.data.product)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getProductDetail()
+  }, [accessToken])
+
   return (
     <div className='flex-[4]'>
+      <div className='flex justify-end'>
+        <button className='bg-blue-500 p-1 text-white rounded-md hover:opacity-70 mr-6'>Thêm sản phẩm vào cửa hàng</button>
+      </div>
       <div className='flex-1 p-5 m-5 shadow-lg shadow-blue-500'>
         {/* Product Info */}
         <div>

@@ -7,23 +7,24 @@ import WidgetLg from '../components/WidgetLg'
 import { publicRequest } from '../requestMethods'
 import { formatAPIParamsDate } from '../helpers'
 import { startOfWeek } from 'date-fns'
+import { useSelector } from 'react-redux'
 
 const Home = () => {
   const [weeklyData, setWeeklyData] = useState([])
-
+  const accessToken = useSelector(state => state.auth.accessToken)
   //get api weekly data for chart
   useEffect(() => {
     const today = formatAPIParamsDate(new Date(2023, 8, 3))
     const firstDateOfWeekParam = formatAPIParamsDate(startOfWeek(today, { weekStartsOn: 1 }))
     const getWeeklyData = async () => {
       try {
-        // const response = publicRequest.post('/v1/management/statistic/get-revenue', {
-        //   from_date: firstDateOfWeekParam,
-        //   today:today
-        // },{
-        //   headers: { Authorization: `Bearer ${accessToken}` }
-        // })
-        const response = weeklyRevenue
+        const response = publicRequest.post('/v1/management/statistic/get-revenue', {
+          from_date: firstDateOfWeekParam,
+          today: today
+        }, {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        })
+        // const response = weeklyRevenue
         setWeeklyData(response.data.statistic)
       } catch (error) {
         console.log(error)
@@ -35,7 +36,7 @@ const Home = () => {
   return (
     <div className='flex-[4]'>
       <FeaturedInfo />
-      <Chart data={weeklyData} title="Biểu đồ tuần này" grid dataKey="total_revenue" />
+      <Chart data={weeklyData} title="Doanh thu tuần này" grid dataKey="total_revenue" />
       {/* Home widgets */}
       <div className='flex m-5'>
         <WidgetSm />

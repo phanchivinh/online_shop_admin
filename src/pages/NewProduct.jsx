@@ -64,25 +64,6 @@ const NewProduct = () => {
     }
 
   }
-  //   {
-  //     "product_name": "ÁO THUN OVERSIZED *WATER OVP*",
-  //     "product_price": 550000,
-  //     "product_cost_price": 250000,
-  //     "product_discount_price": 0,
-  //     "product_description": "100% COTTON\n320GSM\nIN LỤA THỦ CÔNG\nOVERSIZED FIT",
-  //     "category_id": 14
-  // }
-
-  // const handlePriceInput = (event) => {
-  //   const inputID = event.target.id
-  //   const numericValue = event.target.value.replace(/[^0-9]/g, '')
-
-  //   switch (inputID) {
-  //     case 'cost':
-  //       setCostPrice(numericValue)
-  //       break
-  //   }
-  // }
 
   return (
     <div className='flex-[4]'>
@@ -115,70 +96,8 @@ const NewProduct = () => {
             }
           </select>
         </div>
-        <div className="addProductItem mt-2 flex flex-col">
-          <label className='font-bold mb-2'>Size: </label>
-          {/* Size */}
-          <div className='flex flex-wrap'>
-            {
-              sizes.map(item => (
-                <div className='mr-4' key={`size-${item.size_id}`}>
-                  <input type='checkbox' name='size' id={item.size_id} value={item.size_name} checked={filters.sizes.includes(item.size_name)} onChange={() => handleCheckboxChange('sizes', item.size_name)} />
-                  <label className='ml-2 text-sm md:text-base' htmlFor={item.size_name}>{item.size_name}</label>
-                </div>
-              ))
-            }
-          </div>
-          {/* Colors */}
-          <div className="addProductItem mt-2 flex flex-col">
-            <label className='font-bold mb-2'>Màu: </label>
-            <div className='flex flex-wrap'>
-              {
-                colors.map(item => (
-                  <div className='mr-4' key={`size-${item.color_id}`}>
-                    <input type='checkbox' name='color' id={item.color_id} value={item.color_name} checked={filters.sizes.includes(item.color_name)} onChange={() => handleCheckboxChange('colors', item.color_name)} />
-                    <label className='ml-2 text-sm md:text-base' htmlFor={item.color_name}>{item.color_name}</label>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-
-        <div className="w-60 flex flex-col mt-4">
-          <label className='font-bold mb-2'>Hình ảnh của sản phẩm</label>
-          <ReactImageUploading multiple maxNumber={20} value={images} onChange={handleImagesChange} acceptType={['jpg', 'gif', 'png']} dataURLKey="data_url" >
-            {
-              ({ imageList, onImageUpload, onImageRemoveAll, onImageUpdate, onImageRemove, isDragging, dragProps }) => (
-                <div className=''>
-                  <div className='flex mb-2'>
-                    <button className='bg-gray-600 text-white rounded-lg mr-2' style={isDragging ? { color: 'red' } : null}
-                      onClick={onImageUpload}
-                      {...dragProps}>Click ro Drag to add Images</button>
-                    <button className='bg-red-600 text-white rounded-lg' onClick={onImageRemoveAll}>Remove all images</button>
-                  </div>
-                  {imageList.map((image, index) => (
-                    <div key={`product-${index}`} className='flex mb-2'>
-                      <img src={image.data_url} alt="" width="100" className='mr-2' />
-                      <div className='flex flex-col'>
-                        <button className='bg-green-500 text-white rounded-lg mb-2 w-20' onClick={() => onImageUpdate(index)}>Update</button>
-                        <button className='bg-red-500 text-white rounded-lg' onClick={() => onImageRemove(index)}>Remove</button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )
-            }
-          </ReactImageUploading>
-          {/* {
-            images.map((image, index) => (
-              <div key={`image-${index}`}>
-                <img src={image.dataURL} alt={`Image ${index}`} />
-              </div>
-            ))
-          } */}
-        </div>
         <div className='flex justify-end'>
-          <button type='submit' className="my-6 mr-6 py-2 px-3 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-semibold cursor-pointer">Sang bước kế tiếp</button>
+          <button type='submit' className="my-6 mr-6 py-2 px-3 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-semibold cursor-pointer">Bước tiếp theo</button>
         </div>
       </form>
     </div>
