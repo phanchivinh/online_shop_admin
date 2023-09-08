@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { apiColors, apiPrdInventory, apiSizes, fakeProduct } from '../mockData'
 import { formatVND } from '../helpers'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import ReactImageUploading from 'react-images-uploading'
 import { publicRequest } from '../requestMethods'
 import { useSelector } from 'react-redux'
+import MessagePopup from '../components/MessagePopup/MessagePopup'
 
 const AddPrdInventory = () => {
   const [product, setProduct] = useState({})
   const [inventInfos, setInventInfos] = useState([])
   const [images, setImages] = useState([])
+  const navigate = useNavigate()
 
   const [cloundinaryUrls, setCloundinaryUrls] = useState([])
   const [selectedSize, setSelectedSize] = useState("")
   const [selectedColor, setSelectedColor] = useState(-1)
   const [amount, setAmount] = useState(0)
   const [errorMessage, setErrorMessage] = useState("")
+
+  const [addImageSuccess, setAddImageSuccess] = useState(false)
+  const [addInventorySuccess, setAddInventorySuccess] = useState(false)
 
   const { id } = useParams()
   const sizes = apiSizes.data.sizes
@@ -29,16 +34,13 @@ const AddPrdInventory = () => {
 
   const getInventory = async () => {
     try {
-      const response = await publicRequest.get(`/v1/management/products-inventory/${id}`, {}, {
-        headers: { Authorization: `Bearer ${accessToken}` }
-      }).then(res => res.data)
-      if (response.success) {
-        setInventInfos(response.data.product_inventories)
-      }
+      const response = apiPrdInventory
+      setInventInfos(response.data.product_inventories)
     } catch (error) {
       console.log(error)
     }
   }
+
   const uploadImageCloundinary = async (image) => {
     try {
       const response = await publicRequest.post('/v1/media/upload', {
@@ -73,15 +75,16 @@ const AddPrdInventory = () => {
 
   const handleAddImages = async () => {
     try {
-      images.forEach(async (image, index) => {
+      await Promise.all(images.map(async (image, index) => {
         await uploadImageCloundinary(image)
-      })
+      }))
       const mainUrl = cloundinaryUrls[0]
       await apiPostImage(mainUrl, "Y")
       const remainUrls = cloundinaryUrls.slice(1)
-      remainUrls.forEach(async (url, index) => {
+      await Promise.all(remainUrls.map(async (url, index) => {
         await apiPostImage(url, "N")
-      })
+      }))
+      setAddImageSuccess(true)
     } catch (error) {
       console.log(error)
     }
@@ -111,12 +114,19 @@ const AddPrdInventory = () => {
         headers: { Authorization: `Bearer ${accessToken}` }
       }).then(res => res.data)
       if (response.success) {
-        await getInventory()
+        setAddInventorySuccess(true)
       }
     } catch (error) {
       console.log(error)
     }
   }
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAddInventorySuccess(false);
+    }, 5000); // Hiển thị trong 3 giây
+
+    return () => clearTimeout(timeout);
+  }, [addInventorySuccess])
 
   useEffect(() => {
     const getProductDetail = async () => {
@@ -137,7 +147,7 @@ const AddPrdInventory = () => {
   return (
     <div className='flex-[4]'>
       <div className='flex justify-end'>
-        <button className='bg-blue-500 p-1 text-white rounded-md hover:opacity-70 mr-6'>Thêm sản phẩm vào cửa hàng</button>
+        <button className='bg-blue-500 p-1 text-white rounded-md hover:opacity-70 mr-6' onClick={() => navigate("/products")}>Thêm sản phẩm vào cửa hàng</button>
       </div>
       <div className='flex-1 p-5 m-5 shadow-lg shadow-blue-500'>
         {/* Product Info */}
@@ -277,6 +287,12 @@ const AddPrdInventory = () => {
           <button className='bg-blue-500 hover:opacity-70 p-1 text-white rounded-md' onClick={handleAddImages}>Add Images</button>
         </div>
       </div>
+      {
+        addImageSuccess && <MessagePopup message='Thêm hình sản phẩm thành công' isSuccess={addImageSuccess} />
+      }
+      {
+        addInventorySuccess && <MessagePopup message='Thêm options của sản phẩm thành công' isSuccess={addInventorySuccess} />
+      }
     </div>
   )
 }

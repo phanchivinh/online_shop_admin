@@ -4,7 +4,7 @@ import { apiFeaturedInfo } from '../mockData'
 import { startOfYesterday } from 'date-fns'
 import { publicRequest } from '../requestMethods'
 import { useSelector } from 'react-redux'
-import { formatAPIParamsDate } from '../helpers'
+import { formatAPIParamsDate, formatVND } from '../helpers'
 
 const emptyDate = {
   "sale_date": "",
@@ -88,11 +88,11 @@ const FeaturedInfo = () => {
         {/* Featured Money Container */}
         <div className='mx-2 my-0 flex items-center'>
           {/* Feature Money */}
-          <span className='text-3xl font-semibold'>{todayStatistic.total_revenue}</span>
+          <span className='text-3xl font-semibold'>{formatVND(todayStatistic.total_revenue)}</span>
           {/* Feature Money Rate */}
-          <span className='flex items-center ml-5'>{revenueVariabilityPercent}%</span>
+          <span className='flex items-center ml-5'>{Math.round(revenueVariabilityPercent)}%</span>
           {
-            revenueVariabilityPercent > 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
+            revenueVariabilityPercent >= 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
           }
 
         </div>
@@ -107,11 +107,11 @@ const FeaturedInfo = () => {
         {/* Featured Money Container */}
         <div className='mx-2 my-0 flex items-center'>
           {/* Feature Money */}
-          <span className='text-3xl font-semibold'>{(todayStatistic.total_revenue - todayStatistic.total_cost)}</span>
+          <span className='text-3xl font-semibold'>{formatVND(todayStatistic.total_revenue - todayStatistic.total_cost)}</span>
           {/* Feature Money Rate */}
-          <span className='flex items-center ml-5'>{profitVariabilityPercent}%</span>
+          <span className='flex items-center ml-5'>{Math.round(profitVariabilityPercent)}%</span>
           {
-            profitVariabilityPercent > 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
+            profitVariabilityPercent >= 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
           }
         </div>
         {/* Featured Subtitle */}
@@ -129,7 +129,7 @@ const FeaturedInfo = () => {
           {/* Feature Money Rate */}
           <span className='flex items-center ml-5'>{orderVariabilityPercent}</span>
           {
-            revenueVariabilityPercent > 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
+            revenueVariabilityPercent >= 0 ? <AiOutlineArrowUp className='text-base ml-1 text-green-500' /> : <AiOutlineArrowDown className='text-base ml-1 text-red-500' />
           }
         </div>
         {/* Featured Subtitle */}
