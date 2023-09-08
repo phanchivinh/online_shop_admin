@@ -8,16 +8,25 @@ import { publicRequest } from '../requestMethods'
 import { formatAPIParamsDate } from '../helpers'
 import { startOfWeek } from 'date-fns'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [weeklyData, setWeeklyData] = useState([])
   const accessToken = useSelector(state => state.auth.accessToken)
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+  const navigate = useNavigate()
   //get api weekly data for chart
   const getFirstDateOfWeek = () => {
     const today = new Date();
     const firstDay = new Date(today.setDate(today.getDate() - today.getDay() + 1));
     return firstDay
   }
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login')
+    }
+  }, [])
 
   useEffect(() => {
     const today = formatAPIParamsDate(new Date())
@@ -38,6 +47,7 @@ const Home = () => {
     }
     getWeeklyData()
   }, [])
+
 
   return (
     <div className='flex-[4]'>
