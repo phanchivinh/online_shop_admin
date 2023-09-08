@@ -1,15 +1,20 @@
 import React from 'react'
 // import { IoMdNotificationsOutline } from 'react-icons/io'
 import { AiOutlineSetting } from 'react-icons/ai'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../redux/authRedux'
 import { useNavigate } from 'react-router-dom'
+import { publicRequest } from '../requestMethods'
 
 const Topbar = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const accessToken = useSelector(state => state.auth.accessToken)
 
-  const onSignOut = (event) => {
+  const onSignOut = async (event) => {
+    const response = await publicRequest.post('/v1/auth/user/sign-out', {}, {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    })
     dispatch(logout())
     navigate("/login")
   }
