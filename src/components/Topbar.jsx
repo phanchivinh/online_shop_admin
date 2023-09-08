@@ -11,10 +11,7 @@ const Topbar = () => {
   const dispatch = useDispatch()
   const accessToken = useSelector(state => state.auth.accessToken)
 
-  const onSignOut = async (event) => {
-    const response = await publicRequest.post('/v1/auth/user/sign-out', {}, {
-      headers: { Authorization: `Bearer ${accessToken}` }
-    })
+  const onSignOut = (event) => {
     dispatch(logout())
     navigate("/login")
   }
