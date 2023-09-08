@@ -20,7 +20,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    const today = formatAPIParamsDate(new Date(2023, 8, 3))
+    const today = formatAPIParamsDate(new Date())
     const firstDateOfWeekParam = formatAPIParamsDate(getFirstDateOfWeek())
     const getWeeklyData = async () => {
       try {
