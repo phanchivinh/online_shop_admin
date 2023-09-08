@@ -13,17 +13,23 @@ const Home = () => {
   const [weeklyData, setWeeklyData] = useState([])
   const accessToken = useSelector(state => state.auth.accessToken)
   //get api weekly data for chart
+  const getFirstDateOfWeek = () => {
+    const today = new Date();
+    const firstDay = new Date(today.setDate(today.getDate() - today.getDay() + 1));
+    return firstDay
+  }
+
   useEffect(() => {
     const today = formatAPIParamsDate(new Date(2023, 8, 3))
-    const firstDateOfWeekParam = formatAPIParamsDate(startOfWeek(today, { weekStartsOn: 1 }))
+    const firstDateOfWeekParam = formatAPIParamsDate(getFirstDateOfWeek())
     const getWeeklyData = async () => {
       try {
-        const response = publicRequest.post('/v1/management/statistic/get-revenue', {
+        const response = await publicRequest.post('/v1/management/statistic/get-revenue', {
           from_date: firstDateOfWeekParam,
-          today: today
+          to_date: today
         }, {
           headers: { Authorization: `Bearer ${accessToken}` }
-        })
+        }).then(res => res.data)
         // const response = weeklyRevenue
         setWeeklyData(response.data.statistic)
       } catch (error) {

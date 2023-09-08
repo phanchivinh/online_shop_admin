@@ -39,7 +39,7 @@ const AddPrdInventory = () => {
       console.log(error)
     }
   }
-  const uploadImage = async (image) => {
+  const uploadImageCloundinary = async (image) => {
     try {
       const response = await publicRequest.post('/v1/media/upload', {
         image: image.file
@@ -74,13 +74,13 @@ const AddPrdInventory = () => {
   const handleAddImages = async () => {
     try {
       images.forEach(async (image, index) => {
-        await uploadImage(image)
+        await uploadImageCloundinary(image)
       })
       const mainUrl = cloundinaryUrls[0]
       await apiPostImage(mainUrl, "Y")
-      setCloundinaryUrls(prev => prev.slice(1))
-      cloundinaryUrls.forEach(async (url, index) => {
-        await apiPostImage(url, "")
+      const remainUrls = cloundinaryUrls.slice(1)
+      remainUrls.forEach(async (url, index) => {
+        await apiPostImage(url, "N")
       })
     } catch (error) {
       console.log(error)

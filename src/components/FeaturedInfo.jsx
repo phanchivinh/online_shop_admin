@@ -46,9 +46,16 @@ const FeaturedInfo = () => {
     setOrderVariabilityPercent(percentVariability || 0)
   }
 
+  const getYesterday = () => {
+    const today = new Date()
+    const yesterday = new Date(today)
+    yesterday.setDate(today.getDate() - 1)
+    return yesterday
+  }
+
   useEffect(() => {
     const today = new Date()
-    const previousDay = startOfYesterday()
+    const previousDay = getYesterday()
     const todayParam = formatAPIParamsDate(today)
     const previousDayParam = formatAPIParamsDate(previousDay)
     const getStatistic = async () => {

@@ -19,7 +19,6 @@ const UserList = () => {
       }, {
         headers: { Authorization: `Bearer ${accessToken}` }
       }).then(res => res.data)
-      debugger
       if (response.success) {
         navigate(0)
       }
