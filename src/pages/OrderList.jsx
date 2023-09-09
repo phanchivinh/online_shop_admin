@@ -4,6 +4,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { MdDeleteOutline } from 'react-icons/md'
 import { useSelector } from 'react-redux';
 import { publicRequest } from '../requestMethods';
+import { formatVND } from '../helpers';
 
 
 const OrderList = () => {
@@ -52,7 +53,12 @@ const OrderList = () => {
     {
       field: "order_total_price",
       headerName: "Tổng giá trị đơn hàng",
-      width: 150
+      width: 150,
+      renderCell: (params) => {
+        <div>
+          {formatVND(params.row.order_total_price)}
+        </div>
+      }
     },
     {
       field: "order_status_name",

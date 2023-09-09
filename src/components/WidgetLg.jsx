@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { publicRequest } from '../requestMethods'
+import { formatVND } from '../helpers'
 
 const WidgetLg = () => {
   const [orders, setOrders] = useState([])
@@ -65,7 +66,7 @@ const WidgetLg = () => {
                 {/* Date */}
                 <td className='font-light'>{order.create_date}</td>
                 {/* Amount */}
-                <td className='font-light'>{order.order_total_price}</td>
+                <td className='font-light'>{formatVND(order.order_total_price)}</td>
                 {/* Status */}
                 <td><Button type={order.order_status_name} /></td>
               </tr>

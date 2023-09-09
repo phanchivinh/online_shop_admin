@@ -98,14 +98,6 @@ const ProductList = () => {
       }
     },
     {
-      field: "stock", headerName: "Tồn kho", width: 100
-    },
-    {
-      field: "Trạng thái",
-      headerName: "Status",
-      width: 150
-    },
-    {
       field: "action",
       headerName: "Thao tác",
       width: 150,
